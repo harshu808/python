@@ -1,0 +1,27 @@
+# Define a function with special parameters *args and **kwargs
+def display_info(name, *args, **kwargs):
+    print(f"Name: {name}")
+
+    print("Additional Information:")
+    for arg in args:
+        print(f"- {arg}")
+
+    print("Keyword Arguments:")
+    for key, value in kwargs.items():
+        print(f"- {key}: {value}")
+
+
+# Call the function with different arguments
+display_info("Alice", "Age: 30", "Occupation: Engineer",
+             Country="USA", City="New York")
+
+
+# We define a function called display_info that takes a required name parameter, *args for additional non-keyword arguments, and **kwargs for additional keyword arguments.
+
+# Inside the function, we first print the name parameter.
+
+# We then iterate over the args parameter (which is a tuple of additional non-keyword arguments) and print each one.
+
+# Next, we iterate over the kwargs parameter (which is a dictionary of additional keyword arguments) and print each key-value pair.
+
+# When calling the function display_info, we provide the required name argument, followed by additional non-keyword arguments and keyword arguments.

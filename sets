@@ -1,0 +1,49 @@
+# Creating a set
+fruits = {"apple", "banana", "cherry"}
+
+# Adding an element to a set
+fruits.add("orange")
+
+# Attempting to add a duplicate element (no effect)
+fruits.add("apple")
+
+# Removing an element from a set
+fruits.remove("cherry")
+
+# Checking for the existence of an element in a set
+is_apple_present = "apple" in fruits
+is_grape_present = "grape" in fruits
+
+# Iterating through a set
+for fruit in fruits:
+    print(fruit)
+
+# Creating an empty set
+empty_set = set()
+
+# Creating a set from a list (removes duplicates)
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique_numbers = set(numbers)
+
+# Performing set operations
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+
+# Union of two sets
+union_set = set1.union(set2)
+
+# Intersection of two sets
+intersection_set = set1.intersection(set2)
+
+# Difference of two sets
+difference_set = set1.difference(set2)
+
+# Printing results
+print("Fruits Set:", fruits)
+print("Is 'apple' present?", is_apple_present)
+print("Is 'grape' present?", is_grape_present)
+print("Empty Set:", empty_set)
+print("Unique Numbers:", unique_numbers)
+print("Union Set:", union_set)
+print("Intersection Set:", intersection_set)
+print("Difference Set:", difference_set)

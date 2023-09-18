@@ -1,0 +1,31 @@
+# Define a custom iterator class
+class MyIterator:
+    def __init__(self, data):
+        self.data = data
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index < len(self.data):
+            result = self.data[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration
+
+
+# Create an instance of the iterator
+my_iterator = MyIterator([1, 2, 3, 4, 5])
+
+# Use the iterator to loop through the data
+for item in my_iterator:
+    print(item)
+
+
+# We define a custom iterator class MyIterator that takes a sequence of data as input.
+# The class implements the __iter__() method, which returns itself as an iterator.
+# The __next__() method defines the logic for iterating over the data. It raises StopIteration when there are no more items to iterate.
+# We create an instance of MyIterator with a list of numbers.
+# We use a for loop to iterate over the data using the custom iterator, printing each item.

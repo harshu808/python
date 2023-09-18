@@ -1,0 +1,31 @@
+# Define a simple class
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+
+# Create an instance of the Rectangle class
+rectangle = Rectangle(5, 3)
+
+# Access and use method objects
+area_method = rectangle.area  # Method object for the "area" method
+# Method object for the "perimeter" method
+perimeter_method = rectangle.perimeter
+
+# Calculate and print area and perimeter using the method objects
+print("Area:", area_method())
+print("Perimeter:", perimeter_method())
+
+
+# We define a simple class Rectangle with attributes width and height.
+# The class includes two instance methods, area and perimeter, which perform calculations based on the attributes.
+# We create an instance of the Rectangle class called rectangle.
+# We access the method objects for the area and perimeter methods using the instance object and store them in variables.
+# We call the method objects with empty parentheses () to execute the methods and calculate the area and perimeter of the rectangle.

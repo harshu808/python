@@ -1,0 +1,31 @@
+import re
+
+# Sample text containing email addresses
+text = """
+    Here are some email addresses:
+    john.doe@example.com
+    alice.smith@email.co.uk
+    support@website.org
+    """
+
+# Define a regular expression pattern for matching email addresses
+pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+
+# Use re.finditer to find all matches in the text
+matches = re.finditer(pattern, text)
+
+# Print the found email addresses
+print("Found email addresses:")
+for match in matches:
+    print(match.group())
+
+
+# We import the re module, which provides functions for working with regular expressions.
+
+# We define a text variable that contains sample text with email addresses.
+
+# We define a regular expression pattern (pattern) for matching email addresses. This pattern is a common one for simple email address validation.
+
+# We use re.finditer(pattern, text) to find all matches of the pattern in the text. re.finditer returns an iterable containing match objects.
+
+# We loop through the match objects and print each email address found.

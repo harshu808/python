@@ -1,0 +1,51 @@
+# Creating a tuple
+fruits = ("apple", "banana", "cherry")
+
+# Accessing elements of a tuple
+first_fruit = fruits[0]
+second_fruit = fruits[1]
+
+# Slicing a tuple
+slice_of_fruits = fruits[1:3]
+
+# Length of a tuple
+num_fruits = len(fruits)
+
+# Checking for the existence of an element in a tuple
+is_cherry_present = "cherry" in fruits
+is_grape_present = "grape" in fruits
+
+# Iterating through a tuple
+for fruit in fruits:
+    print(fruit)
+
+# Nested tuples
+nested_tuple = ("apple", (1, 2, 3), "banana")
+
+# Unpacking a tuple
+a, b, c = fruits
+
+# Creating a sequence using parentheses
+numbers = (1, 2, 3, 4, 5)
+
+# Creating a sequence without parentheses (also a tuple)
+colors = "red", "green", "blue"
+
+# Accessing elements of a sequence
+first_number = numbers[0]
+second_color = colors[1]
+
+# Printing results
+print("Fruits:", fruits)
+print("First Fruit:", first_fruit)
+print("Second Fruit:", second_fruit)
+print("Slice of Fruits:", slice_of_fruits)
+print("Number of Fruits:", num_fruits)
+print("Is 'cherry' present?", is_cherry_present)
+print("Is 'grape' present?", is_grape_present)
+print("Nested Tuple:", nested_tuple)
+print("Unpacked Tuple (a, b, c):", a, b, c)
+print("Numbers:", numbers)
+print("Colors:", colors)
+print("First Number:", first_number)
+print("Second Color:", second_color)

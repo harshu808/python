@@ -1,0 +1,28 @@
+# Define a function with a default argument
+def greet(name, greeting="Hello"):
+    message = f"{greeting}, {name}!"
+    return message
+
+
+# Call the function without providing the 'greeting' argument
+result1 = greet("Alice")
+
+# Call the function and provide a custom 'greeting' argument
+result2 = greet("Bob", "Hi")
+
+# Print the results
+print(result1)
+print(result2)
+
+
+# We define a function called greet with two parameters: name and greeting. The greeting parameter has a default value of "Hello."
+
+# Inside the function, we use these parameters to construct a greeting message, which is stored in the message variable.
+
+# We return the message from the function.
+
+# We call the greet function twice:
+
+# In the first call, we only provide the name parameter ("Alice"), so the default greeting "Hello" is used.
+# In the second call, we provide both the name parameter ("Bob") and a custom greeting ("Hi").
+# We print the results of the function calls.

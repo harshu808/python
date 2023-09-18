@@ -1,0 +1,17 @@
+# Create an empty stack (list)
+stack = []
+
+# Push items onto the stack
+stack.append("Item 1")
+stack.append("Item 2")
+stack.append("Item 3")
+
+# Pop items from the stack
+popped_item = stack.pop()
+print("Popped:", popped_item)
+
+# Push another item
+stack.append("Item 4")
+
+# Print the current stack
+print("Current Stack:", stack)

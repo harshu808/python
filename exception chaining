@@ -1,0 +1,31 @@
+# Define a custom exception class
+class MyCustomException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+
+# Function that raises a custom exception
+
+
+def divide(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError as original_error:
+        raise MyCustomException(
+            "Division by zero is not allowed.") from original_error
+    return result
+
+
+# Test the divide function with exception chaining
+try:
+    result = divide(10, 0)
+except MyCustomException as e:
+    print(f"Custom Exception: {e}")
+    # Access the original exception that was chained
+    original_error = e.__cause__
+    print(f"Original Error: {original_error}")
+
+
+# We define a custom exception class MyCustomException.
+# The divide function attempts to perform a division operation and raises a custom exception MyCustomException if a ZeroDivisionError occurs. We use the from keyword to chain the original ZeroDivisionError as the cause of the custom exception.
+# When testing the divide function, we catch and handle the custom exception and access the original error that was chained as the cause.
+# When you run this code, it will raise a custom exception that is chained to the original ZeroDivisionError. This allows you to provide additional context or information about the error while preserving the details of the original exception. Exception chaining is a useful technique for error handling and debugging.

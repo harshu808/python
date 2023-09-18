@@ -1,0 +1,23 @@
+# Define a function with positional-only parameters
+def calculate_product(x, y, /):
+    result = x * y
+    return result
+
+
+# Call the function using positional arguments
+product = calculate_product(5, 3)
+print("Product:", product)
+
+# Attempt to call the function using keyword arguments (will result in an error)
+# product = calculate_product(x=5, y=3)  # Uncommenting this line will raise an error
+
+
+# We define a function called calculate_product with two positional-only parameters (x and y) indicated by the / symbol. This means you can only pass values for x and y by their positions, not by using keyword arguments.
+
+# Inside the function, we calculate the product of x and y.
+
+# We call the calculate_product function using positional arguments for x and y.
+
+# We also have a commented-out line that attempts to call the function using keyword arguments (x=5 and y=3). Uncommenting this line would result in a TypeError because keyword arguments are not allowed for positional-only parameters.
+
+# When you run this code, it will correctly calculate and print the product of 5 and 3 using positional arguments.

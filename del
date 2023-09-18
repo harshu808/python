@@ -1,0 +1,18 @@
+# Define a list
+my_list = [1, 2, 3, 4, 5]
+
+# Delete an element from the list
+del my_list[2]
+
+# The list now contains [1, 2, 4, 5]
+print(my_list)
+
+
+# Define a dictionary
+my_dict = {"name": "Alice", "age": 30, "city": "New York"}
+
+# Delete an item from the dictionary
+del my_dict["age"]
+
+# The dictionary now contains {'name': 'Alice', 'city': 'New York'}
+print(my_dict)

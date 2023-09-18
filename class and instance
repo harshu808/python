@@ -1,0 +1,35 @@
+# Define a class with both class and instance variables
+class Student:
+    # Class variable to keep track of the number of students
+    student_count = 0
+
+    def __init__(self, name, age):
+        # Instance variables specific to each student
+        self.name = name
+        self.age = age
+
+        # Increment the class variable to count students
+        Student.student_count += 1
+
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Total Students: {Student.student_count}")
+
+
+# Create instances of the Student class
+student1 = Student("Alice", 18)
+student2 = Student("Bob", 17)
+
+# Display information about the students
+print("Student 1:")
+student1.display_info()
+
+print("\nStudent 2:")
+student2.display_info()
+
+
+# We define a class Student with a class variable student_count to keep track of the number of students. Class variables are shared among all instances of the class.
+# The class has an __init__ method that initializes instance variables name and age for each student. Instance variables are specific to each instance.
+# Inside the __init__ method, we increment the class variable student_count to count the number of students created.
+# The display_info method prints information about the student, including their name, age, and the total number of students.

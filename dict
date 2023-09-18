@@ -1,0 +1,44 @@
+# Creating a dictionary
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+# Accessing values by key
+name = person["name"]
+age = person["age"]
+
+# Modifying a value
+person["city"] = "San Francisco"
+
+# Adding a new key-value pair
+person["occupation"] = "Engineer"
+
+# Deleting a key-value pair
+del person["age"]
+
+# Checking for the existence of a key
+is_age_present = "age" in person
+is_gender_present = "gender" in person
+
+# Iterating through keys and values
+for key in person:
+    print(f"{key}: {person[key]}")
+
+# Getting keys and values as lists
+keys = list(person.keys())
+values = list(person.values())
+
+# Creating an empty dictionary
+empty_dict = {}
+
+# Printing results
+print("Person Dictionary:", person)
+print("Name:", name)
+print("Age:", age)
+print("Is 'age' present?", is_age_present)
+print("Is 'gender' present?", is_gender_present)
+print("Keys:", keys)
+print("Values:", values)
+print("Empty Dictionary:", empty_dict)

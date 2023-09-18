@@ -1,0 +1,59 @@
+# Using a for loop to iterate over a list
+numbers = [1, 2, 3, 4, 5]
+print("Using a for loop to iterate over a list:")
+for num in numbers:
+    print(num, end=" ")
+print("\n")
+
+# Using a while loop to iterate until a condition is met
+count = 0
+print("Using a while loop to iterate until a condition is met:")
+while count < 5:
+    print(count, end=" ")
+    count += 1
+print("\n")
+
+# Using a for loop with the range() function
+print("Using a for loop with the range() function:")
+for i in range(5):
+    print(i, end=" ")
+print("\n")
+
+# Using enumerate() to loop with index and value
+fruits = ["apple", "banana", "cherry"]
+print("Using enumerate() to loop with index and value:")
+for index, fruit in enumerate(fruits):
+    print(f"Index {index}: {fruit}")
+print("\n")
+
+# Using zip() to loop through multiple lists simultaneously
+names = ["Alice", "Bob", "Charlie"]
+ages = [30, 25, 35]
+print("Using zip() to loop through multiple lists simultaneously:")
+for name, age in zip(names, ages):
+    print(f"Name: {name}, Age: {age}")
+print("\n")
+
+# Using a for loop with dictionaries
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+print("Using a for loop with dictionaries:")
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# Using break to exit a loop early
+print("\nUsing break to exit a loop early:")
+for num in numbers:
+    if num == 3:
+        break
+    print(num, end=" ")
+
+# Using continue to skip an iteration
+print("\nUsing continue to skip an iteration:")
+for num in numbers:
+    if num == 3:
+        continue
+    print(num, end=" ")

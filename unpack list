@@ -1,0 +1,25 @@
+# Define a function that takes three arguments
+def greet(name, age, city):
+    message = f"Hello, {name}! You are {age} years old and live in {city}."
+    return message
+
+
+# Create a list of values
+person_info = ["Alice", 30, "New York"]
+
+# Call the function by unpacking the list
+result = greet(*person_info)
+
+# Print the result
+print(result)
+
+
+# We define a function called greet that takes three arguments: name, age, and city. This function constructs a greeting message using these arguments.
+
+# We create a list called person_info that contains three values: name, age, and city.
+
+# We call the greet function and use the * operator to unpack the person_info list and pass its elements as separate arguments to the function.
+
+# The function greet receives the unpacked arguments and constructs the greeting message.
+
+# We print the result, which will display the greeting message with the values from the person_info list.

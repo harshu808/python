@@ -1,0 +1,41 @@
+# List comprehension to create a list of squares
+numbers = [1, 2, 3, 4, 5]
+squares = [x ** 2 for x in numbers]
+print("Squares:", squares)
+
+# Lambda function for sorting a list of tuples by the second element
+tuples = [(3, 1), (1, 2), (5, 0), (2, 4)]
+sorted_tuples = sorted(tuples, key=lambda x: x[1])
+print("Sorted Tuples:", sorted_tuples)
+
+# Using a set to remove duplicates from a list
+fruits = ["apple", "banana", "apple", "orange", "banana"]
+unique_fruits = list(set(fruits))
+print("Unique Fruits:", unique_fruits)
+
+# A simple generator function that generates squares of numbers
+
+
+def generate_squares(n):
+    for i in range(n):
+        yield i ** 2
+
+
+# Using the generator to print squares
+print("Generated Squares:")
+for square in generate_squares(5):
+    print(square)
+
+# Using the zip function to combine two lists into pairs
+names = ["Alice", "Bob", "Charlie"]
+scores = [85, 92, 78]
+name_score_pairs = list(zip(names, scores))
+print("Name-Score Pairs:", name_score_pairs)
+
+
+# We use a list comprehension to create a list of squares from a list of numbers.
+# We use a lambda function to sort a list of tuples based on the second element in each tuple.
+# We demonstrate how to remove duplicates from a list using a set.
+# We define a generator function that yields squares of numbers up to a specified limit.
+# We use the generator to generate and print squares.
+# We use the zip function to combine two lists into pairs.

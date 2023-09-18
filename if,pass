@@ -1,0 +1,14 @@
+# Get the range from the user
+start = int(input("Enter the start of the range: "))
+end = int(input("Enter the end of the range: "))
+
+print(f"Classifying numbers between {start} and {end} as even or odd:")
+
+# Loop through the range to classify numbers
+for num in range(start, end + 1):
+    if num % 2 == 0:
+        print(f"{num} is even")
+    else:
+        pass  # Skip odd numbers
+
+print("Done")

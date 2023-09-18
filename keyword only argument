@@ -1,0 +1,25 @@
+# Define a function with keyword-only arguments
+def greet(name, *, greeting="Hello"):
+    message = f"{greeting}, {name}!"
+    return message
+
+
+# Call the function using keyword arguments
+result1 = greet(name="Alice")
+result2 = greet(name="Bob", greeting="Hi")
+
+# Attempt to call the function using positional arguments (will result in an error)
+# result3 = greet("Charlie")  # Uncommenting this line will raise an error
+
+# Print the results
+print(result1)
+print(result2)
+
+
+# We define a function called greet with one positional parameter (name) and one keyword-only parameter (greeting). The * symbol before greeting indicates that it can only be passed as a keyword argument.
+
+# Inside the function, we construct a greeting message using the provided name and greeting values.
+
+# We call the greet function using keyword arguments for both name and greeting. This works as expected.
+
+# There's a commented-out line that attempts to call the function using a positional argument for name and no argument for greeting. Uncommenting this line would result in a TypeError because greeting must be specified using a keyword argument.

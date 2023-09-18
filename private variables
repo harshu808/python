@@ -1,0 +1,43 @@
+# Define a class with private variables
+class BankAccount:
+    def __init__(self, account_number, initial_balance):
+        self._account_number = account_number  # Private variable
+        self._balance = initial_balance  # Private variable
+
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited ${amount}. New balance: ${self._balance}")
+        else:
+            print("Invalid deposit amount.")
+
+    def withdraw(self, amount):
+        if 0 < amount <= self._balance:
+            self._balance -= amount
+            print(f"Withdrew ${amount}. New balance: ${self._balance}")
+        else:
+            print("Invalid withdrawal amount or insufficient balance.")
+
+    def get_balance(self):
+        return self._balance
+
+    def get_account_number(self):
+        return self._account_number
+
+
+# Create an instance of the BankAccount class
+account = BankAccount("12345", 1000)
+
+# Access and modify private variables indirectly
+print("Account Number:", account.get_account_number())
+print("Initial Balance:", account.get_balance())
+
+account.deposit(500)
+account.withdraw(200)
+
+print("Current Balance:", account.get_balance())
+
+
+# We define a class BankAccount with private variables _account_number and _balance.
+# The methods deposit, withdraw, get_balance, and get_account_number provide controlled access to these private variables.
+# Outside the class, we access and modify the private variables indirectly through these methods.

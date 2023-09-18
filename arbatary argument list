@@ -1,0 +1,20 @@
+# Define a function with *args and **kwargs
+def show_args_and_kwargs(*args, **kwargs):
+    print("Positional Arguments (*args):")
+    for arg in args:
+        print(arg)
+
+    print("\nKeyword Arguments (**kwargs):")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+
+# Call the function with various arguments
+show_args_and_kwargs(1, "apple", True, name="Alice", age=30, city="New York")
+
+
+# We define a function called show_args_and_kwargs that accepts arbitrary positional arguments *args and arbitrary keyword arguments **kwargs.
+
+# Inside the function, we loop through and print all the positional arguments passed in *args and all the keyword arguments passed in **kwargs.
+
+# We call the show_args_and_kwargs function with a mix of positional arguments (1, "apple", True) and keyword arguments (name="Alice", age=30, city="New York").

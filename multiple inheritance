@@ -1,0 +1,36 @@
+# Define a base class A
+class A:
+    def method_A(self):
+        print("Method from class A")
+
+# Define another base class B
+
+
+class B:
+    def method_B(self):
+        print("Method from class B")
+
+# Define a subclass C that inherits from both A and B
+
+
+class C(A, B):
+    def method_C(self):
+        print("Method from class C")
+
+
+# Create an instance of class C
+obj = C()
+
+# Access methods from both base classes A and B
+obj.method_A()
+obj.method_B()
+
+# Access the method from class C
+obj.method_C()
+
+
+# We define two base classes, A and B, each with their own methods.
+# We define a subclass C that inherits from both A and B. This allows instances of C to access methods from both A and B.
+# We create an instance of class C called obj.
+# We access methods from both base classes A and B using obj.method_A() and obj.method_B().
+# We also access the method from class C using obj.method_C().

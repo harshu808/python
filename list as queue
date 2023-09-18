@@ -1,0 +1,28 @@
+# Create an empty queue (list)
+queue = []
+
+# Enqueue items to the queue
+queue.append("Item 1")
+queue.append("Item 2")
+queue.append("Item 3")
+
+# Dequeue items from the queue
+dequeued_item = queue.pop(0)
+print("Dequeued:", dequeued_item)
+
+# Enqueue another item
+queue.append("Item 4")
+
+# Print the current queue
+print("Current Queue:", queue)
+
+
+# We create an empty list called queue to represent our queue.
+
+# We enqueue (add) items to the queue using the append() method. The items are added to the end of the list, representing the back of the queue.
+
+# We dequeue (remove) an item from the queue using the pop(0) method. The item removed is the first one that was enqueued, representing the front of the queue.
+
+# After dequeuing an item, we enqueue another item to the queue.
+
+# Finally, we print the current state of the queue.

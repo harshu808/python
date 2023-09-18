@@ -1,0 +1,13 @@
+# Get the upper limit from the user
+upper_limit = int(input("Enter the upper limit: "))
+
+# Initialize a variable to store the sum
+even_sum = 0
+
+# Use a for loop and range() to find and sum even numbers
+for number in range(1, upper_limit + 1):
+    if number % 2 == 0:
+        even_sum += number
+
+# Print the sum of even numbers
+print(f"The sum of even numbers between 1 and {upper_limit} is: {even_sum}")

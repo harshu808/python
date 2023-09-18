@@ -1,0 +1,27 @@
+# Define a simple class
+class Dog:
+    # Constructor method
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    # Instance method
+    def bark(self):
+        return f"{self.name} says Woof!"
+
+
+# Create instances (objects) of the Dog class
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Labrador")
+
+# Access attributes and call methods on the objects
+print(f"{dog1.name} is a {dog1.breed}.")
+print(f"{dog2.name} is a {dog2.breed}.")
+print(dog1.bark())
+print(dog2.bark())
+
+
+# We define a simple class Dog with a constructor (__init__) method that initializes instance attributes name and breed.
+# The class also includes an instance method bark that returns a string indicating the dog's bark.
+# We create two instances (dog1 and dog2) of the Dog class with different names and breeds.
+# We access the attributes name and breed, as well as call the bark method on each object.

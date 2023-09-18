@@ -1,0 +1,23 @@
+# Create a list of even numbers using a list comprehension
+even_numbers = [x for x in range(10) if x % 2 == 0]
+
+# Create a list of squares using a list comprehension
+squares = [x ** 2 for x in range(5)]
+
+# Create a list of uppercase characters using a list comprehension
+text = "hello, world!"
+uppercase_chars = [char.upper() for char in text if char.isalpha()]
+
+# Print the results
+print("Even Numbers:", even_numbers)
+print("Squares:", squares)
+print("Uppercase Characters:", uppercase_chars)
+
+
+# We create a list of even numbers from 0 to 9 using a list comprehension. The expression x for x in range(10) if x % 2 == 0 generates even numbers by iterating over the range and filtering for even values.
+
+# We create a list of squares of numbers from 0 to 4 using a list comprehension. The expression x ** 2 for x in range(5) calculates the square of each number in the range.
+
+# We create a list of uppercase characters from the string "hello, world!" using a list comprehension. The expression char.upper() for char in text if char.isalpha() iterates over each character in the string, checks if it is alphabetic, and converts it to uppercase if it is.
+
+# Finally, we print the results of the list comprehensions.

@@ -1,0 +1,27 @@
+# Define a function with positional and keyword parameters
+def print_info(name, age, city="Unknown", country="Unknown"):
+    print(f"Name: {name}")
+    print(f"Age: {age}")
+    print(f"City: {city}")
+    print(f"Country: {country}")
+
+
+# Call the function using positional arguments
+print_info("Alice", 30)
+
+# Call the function using keyword arguments
+print_info(name="Bob", age=25, city="New York", country="USA")
+
+# Call the function using a mix of positional and keyword arguments
+print_info("Charlie", 40, country="Canada")
+
+
+# We define a function called print_info with two required positional parameters (name and age) and two optional keyword parameters (city and country) with default values.
+
+# Inside the function, we print the values of these parameters.
+
+# We call the print_info function in three different ways:
+
+# First, using only positional arguments for name and age. The default values are used for city and country.
+# Second, using keyword arguments for all parameters, providing values for name, age, city, and country.
+# Third, using a mix of positional and keyword arguments. We specify name and age positionally, and provide a value for country using a keyword argument.

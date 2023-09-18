@@ -1,0 +1,26 @@
+# Define a function that uses keyword arguments
+def greet(name, greeting="Hello"):
+    message = f"{greeting}, {name}!"
+    return message
+
+
+# Call the function using keyword arguments
+result1 = greet(name="Alice")
+result2 = greet(name="Bob", greeting="Hi")
+
+# Print the results
+print(result1)
+print(result2)
+
+
+# We define a function called greet with two parameters: name and greeting. The greeting parameter has a default value of "Hello."
+
+# Inside the function, we use these parameters to construct a greeting message, which is stored in the message variable.
+
+# We return the message from the function.
+
+# We call the greet function using keyword arguments:
+
+# In the first call, we provide the name parameter using the keyword argument name="Alice". We omit the greeting argument, so the default "Hello" is used.
+# In the second call, we provide both the name and greeting parameters using keyword arguments.
+# We print the results of the function calls.

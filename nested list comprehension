@@ -1,0 +1,29 @@
+# Create a matrix using nested list comprehensions
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Transpose the matrix using nested list comprehensions
+transpose = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+
+# Flatten a nested list using nested list comprehensions
+nested_list = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+flattened = [item for sublist in nested_list for item in sublist]
+
+# Print the results
+print("Original Matrix:")
+for row in matrix:
+    print(row)
+
+print("\nTransposed Matrix:")
+for row in transpose:
+    print(row)
+
+print("\nFlattened List:", flattened)
+
+
+# We create a 3x3 matrix using nested list comprehensions. Each inner list represents a row of the matrix.
+
+# We transpose the matrix using nested list comprehensions. The expression [[row[i] for row in matrix] for i in range(len(matrix[0]))] creates a new matrix where rows become columns and vice versa.
+
+# We flatten a nested list using nested list comprehensions. The expression [item for sublist in nested_list for item in sublist] flattens the nested list into a single list.
+
+# We print the original matrix, the transposed matrix, and the flattened list.

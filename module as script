@@ -1,0 +1,22 @@
+# my_module.py
+
+def greet(name):
+    return f"Hello, {name}!"
+
+
+def add(a, b):
+    return a + b
+
+
+if __name__ == "__main__":
+    # Code to execute if this module is run as the main program
+    message = greet("Alice")
+    print(message)
+
+    result = add(3, 5)
+    print("The result of addition is:", result)
+
+
+# my_module.py contains two functions, greet and add, just like before.
+# The condition if __name__ == "__main__": checks whether the module is being run as the main program. If it is, the code block underneath is executed.
+# Now, when you run my_module.py directly, it will execute the code inside the if __name__ == "__main__": block:

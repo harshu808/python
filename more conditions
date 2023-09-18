@@ -1,0 +1,46 @@
+# Basic if statement
+age = 25
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+
+# Nested if-else statements
+temperature = 25
+if temperature > 30:
+    print("It's hot outside.")
+elif temperature > 20:
+    print("It's warm outside.")
+else:
+    print("It's cool outside.")
+
+# Using logical operators (and, or, not)
+is_sunny = True
+is_weekend = True
+
+if is_sunny and is_weekend:
+    print("It's a sunny weekend!")
+elif is_sunny or is_weekend:
+    print("It's either sunny or a weekend.")
+else:
+    print("It's neither sunny nor a weekend.")
+
+# Ternary conditional expression
+x = 10
+y = 20
+max_value = x if x > y else y
+print(f"The maximum value is {max_value}.")
+
+# Checking for the presence of a value (truthiness)
+value = None
+if value:
+    print("Value is present.")
+else:
+    print("Value is not present.")
+
+# Using the "in" operator to check for membership in a list
+fruits = ["apple", "banana", "cherry"]
+if "apple" in fruits:
+    print("Apple is in the list.")
+else:
+    print("Apple is not in the list.")

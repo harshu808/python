@@ -1,0 +1,27 @@
+# Define a lambda function to add two numbers
+def add(x, y): return x + y
+
+
+# Use the lambda function
+result = add(3, 5)
+print("The result of addition is:", result)
+
+# Define a lambda function to square a number
+
+
+def square(x): return x ** 2
+
+
+# Use the lambda function
+number = 4
+result = square(number)
+print(f"The square of {number} is:", result)
+
+
+# We define a lambda function called add that takes two arguments, x and y, and returns their sum.
+
+# We use the add lambda function to add 3 and 5, and then print the result.
+
+# We define another lambda function called square that takes a single argument, x, and returns its square.
+
+# We use the square lambda function to square the number 4, and then print the result.
