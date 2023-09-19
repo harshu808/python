@@ -1,31 +1,33 @@
 import re
 
-# Sample text containing email addresses
-text = """
-    Here are some email addresses:
-    john.doe@example.com
-    alice.smith@email.co.uk
-    support@website.org
-    """
+# Define a pattern to match
+pattern = r"Hello, \w+!"
 
-# Define a regular expression pattern for matching email addresses
-pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+# Test strings
+string1 = "Hello, World!"  # Should match
+string2 = "Hi, there!"      # Should not match
 
-# Use re.finditer to find all matches in the text
-matches = re.finditer(pattern, text)
+# Use re.match() to check if the strings match the pattern
+match1 = re.match(pattern, string1)
+match2 = re.match(pattern, string2)
 
-# Print the found email addresses
-print("Found email addresses:")
-for match in matches:
-    print(match.group())
+# Check the match results
+if match1:
+    print(f"'{string1}' matches the pattern.")
+else:
+    print(f"'{string1}' does not match the pattern.")
 
+if match2:
+    print(f"'{string2}' matches the pattern.")
+else:
+    print(f"'{string2}' does not match the pattern.")
 
 # We import the re module, which provides functions for working with regular expressions.
 
-# We define a text variable that contains sample text with email addresses.
+# We define a regular expression pattern (pattern) to match a string that starts with "Hello, " followed by one or more word characters (\w+) and ends with an exclamation mark.
 
-# We define a regular expression pattern (pattern) for matching email addresses. This pattern is a common one for simple email address validation.
+# We have two test strings (string1 and string2).
 
-# We use re.finditer(pattern, text) to find all matches of the pattern in the text. re.finditer returns an iterable containing match objects.
+# We use re.match(pattern, string) to check if each string matches the pattern. re.match() attempts to match the pattern at the beginning of the string.
 
-# We loop through the match objects and print each email address found.
+# We print whether each string matches the pattern based on the match results.
