@@ -1,0 +1,41 @@
+import threading
+import time
+
+# Define a simple function to simulate work
+
+
+def worker(thread_num):
+    for i in range(5):
+        print(f"Thread {thread_num}: Working...")
+        time.sleep(1)
+    print(f"Thread {thread_num}: Done!")
+
+
+# Create two threads
+thread1 = threading.Thread(target=worker, args=(1,))
+thread2 = threading.Thread(target=worker, args=(2,))
+
+# Start the threads
+thread1.start()
+thread2.start()
+
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+
+print("All threads have finished.")
+
+
+# We import the threading module, which provides functionality for multi-threading.
+
+# We define a simple worker function that simulates work by printing messages and sleeping for 1 second five times.
+
+# We create two threads, thread1 and thread2, using the threading.Thread class. Each thread is assigned the worker function as its target and is passed a thread number as an argument.
+
+# We start both threads using the start() method.
+
+# We use the join() method to wait for both threads to finish before proceeding.
+
+# Finally, we print a message indicating that all threads have finished.
+
+# When you run this code, you will see that thread1 and thread2 run concurrently, and their output may be interleaved. The join() method ensures that the main program waits for both threads to complete before moving on.

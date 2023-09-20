@@ -1,0 +1,29 @@
+import logging
+
+# Configure the logging settings
+logging.basicConfig(
+    filename='myapp.log',  # Log file name
+    level=logging.DEBUG,   # Minimum level for log messages
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+# Create a logger
+logger = logging.getLogger(__name__)
+
+# Log messages
+logger.debug('This is a debug message')
+logger.info('This is an info message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
+
+
+# We import the logging module.
+
+# We configure the logging settings using basicConfig(). We specify the log file name (filename), the minimum logging level (level), and the log message format (format). The filename will create a log file called 'myapp.log' in the current working directory.
+
+# We create a logger object using getLogger(__name__). The __name__ variable corresponds to the current module's name.
+
+# We use the logger object to log messages at different severity levels using methods like debug(), info(), warning(), error(), and critical().
+
+# When you run this code, it will log messages to the specified log file in the format specified in the configuration. You can adjust the log level to control which messages are logged. In this example, messages at and above the DEBUG level will be logged.

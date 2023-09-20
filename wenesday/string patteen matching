@@ -1,0 +1,41 @@
+import re
+
+# Define a sample text
+text = "Hello, my email is john@example.com, and my phone number is 123-456-7890."
+
+# Define a regular expression pattern for matching email addresses
+email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+
+# Find all email addresses in the text using the re.findall() function
+email_addresses = re.findall(email_pattern, text)
+
+# Print the found email addresses
+print("Email Addresses:")
+for email in email_addresses:
+    print(email)
+
+# Define a regular expression pattern for matching phone numbers
+phone_pattern = r'\b\d{3}-\d{3}-\d{4}\b'
+
+# Find all phone numbers in the text using the re.findall() function
+phone_numbers = re.findall(phone_pattern, text)
+
+# Print the found phone numbers
+print("\nPhone Numbers:")
+for phone in phone_numbers:
+    print(phone)
+
+
+# We import the re module to work with regular expressions.
+
+# We define a sample text text that contains both email addresses and phone numbers.
+
+# We define two regular expression patterns, email_pattern and phone_pattern, using raw strings(r'') to ensure that backslashes are treated as literal characters.
+
+# We use the re.findall() function to find all matches of the specified patterns in the text. This function returns a list of matched strings.
+
+# We print the found email addresses and phone numbers by iterating through the lists returned by re.findall().
+
+# For email addresses, the regular expression pattern r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b' is used. This pattern matches common email address formats.
+
+# For phone numbers, the regular expression pattern r'\b\d{3}-\d{3}-\d{4}\b' is used. This pattern matches phone numbers in the format "123-456-7890."

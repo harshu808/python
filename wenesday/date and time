@@ -1,0 +1,38 @@
+import datetime
+
+# Get the current date and time
+current_datetime = datetime.datetime.now()
+print("Current Date and Time:", current_datetime)
+
+# Get the current date
+current_date = datetime.date.today()
+print("Current Date:", current_date)
+
+# Get the current time
+current_time = datetime.datetime.now().time()
+print("Current Time:", current_time)
+
+# Create a specific date
+specific_date = datetime.date(2023, 9, 15)
+print("Specific Date:", specific_date)
+
+# Create a specific time
+specific_time = datetime.time(14, 30)
+print("Specific Time:", specific_time)
+
+# Format a date as a string
+formatted_date = current_date.strftime("%Y-%m-%d")
+print("Formatted Date:", formatted_date)
+
+# Format a time as a string
+formatted_time = current_time.strftime("%H:%M:%S")
+print("Formatted Time:", formatted_time)
+
+
+# We import the datetime module, which provides classes and functions for working with dates and times.
+
+# We use datetime.datetime.now() to get the current date and time, datetime.date.today() to get the current date, and datetime.datetime.now().time() to get the current time.
+
+# We create specific date and time objects using the datetime.date() and datetime.time() constructors.
+
+# We use the strftime() method to format dates and times as strings. In this example, we format them as "YYYY-MM-DD" and "HH:MM:SS," respectively.

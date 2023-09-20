@@ -1,0 +1,26 @@
+import sys
+
+# Check the number of command-line arguments
+num_args = len(sys.argv)
+
+# Print the script name (the first argument)
+print("Script Name:", sys.argv[0])
+
+# Print the total number of arguments (including the script name)
+print("Total Arguments:", num_args)
+
+# Print all command-line arguments (excluding the script name)
+print("Arguments (excluding script name):")
+for i in range(1, num_args):
+    print(f"Argument {i}: {sys.argv[i]}")
+
+
+# We import the sys module, which provides access to command-line arguments through the sys.argv list.
+
+# We use len(sys.argv) to determine the total number of command-line arguments, including the script name. The script name is always the first element in the sys.argv list.
+
+# We print the script name (sys.argv[0]) to display the name of the script itself.
+
+# We print the total number of arguments (num_args) to show how many arguments were provided.
+
+# We iterate through the command-line arguments starting from the second element (sys.argv[1:]) and print each argument with its corresponding index.

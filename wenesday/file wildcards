@@ -1,0 +1,18 @@
+import glob
+
+# List all text files in the current directory
+text_files = glob.glob("*.txt")
+
+# Print the list of matching files
+print("Text Files in the Current Directory:")
+for file in text_files:
+    print(file)
+
+
+# We import the glob module, which provides a function called glob.glob() for working with file wildcards.
+
+# We use glob.glob("*.txt") to search for all files in the current directory with a .txt extension. The "*.txt" is a wildcard pattern that matches any file with a .txt extension.
+
+# The result is a list of filenames that match the pattern, which we store in the text_files variable.
+
+# We then iterate over the list of matching files and print each filename.

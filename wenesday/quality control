@@ -1,0 +1,31 @@
+# Define a list of values to check
+values = [10, 15, 12, 8, 19, 7, 25, 14]
+
+# Define the acceptable range for values
+min_value = 5
+max_value = 20
+
+# Perform quality control check
+
+
+def quality_control(values, min_value, max_value):
+    for value in values:
+        if min_value <= value <= max_value:
+            print(f"Value {value} is within the acceptable range.")
+        else:
+            print(f"Value {value} is outside the acceptable range.")
+
+
+# Run the quality control check
+quality_control(values, min_value, max_value)
+
+
+# We define a list of values that we want to check for quality control.
+
+# We specify the acceptable range for values using min_value and max_value.
+
+# We create a quality_control function that iterates through each value in the list and checks if it falls within the specified range.
+
+# Inside the function, if a value is within the acceptable range, it prints a message indicating that the value is within the range. Otherwise, it prints a message indicating that the value is outside the range.
+
+# Finally, we run the quality control check by calling the quality_control function with the list of values and the acceptable range.

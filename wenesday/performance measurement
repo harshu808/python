@@ -1,0 +1,33 @@
+import time
+
+# Define a function to measure performance
+
+
+def perform_task():
+    start_time = time.time()  # Get the current time
+    # Replace this with the task you want to measure
+    for _ in range(1000000):
+        pass  # Placeholder for the task
+    end_time = time.time()  # Get the current time again
+    elapsed_time = end_time - start_time  # Calculate the elapsed time
+    return elapsed_time
+
+
+# Call the function and measure its performance
+execution_time = perform_task()
+
+# Print the execution time
+print(f"Task took {execution_time:.6f} seconds to complete.")
+
+
+# We import the time module, which provides functions for working with time and measuring performance.
+
+# We define a function perform_task() that contains the code you want to measure. In this example, it contains a simple loop as a placeholder for the task.
+
+# Inside the perform_task() function, we record the current time using time.time() before and after executing the task and calculate the elapsed time.
+
+# We call the perform_task() function to perform the task and measure its performance.
+
+# Finally, we print the execution time in seconds with six decimal places.
+
+# You can replace the code inside the perform_task() function with the actual task you want to measure. This allows you to measure the performance of specific code segments and optimize them if necessary.

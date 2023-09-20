@@ -1,0 +1,41 @@
+# Addition
+import math
+a = 5
+b = 3
+sum_result = a + b
+print(f"Addition: {a} + {b} = {sum_result}")
+
+# Subtraction
+difference = a - b
+print(f"Subtraction: {a} - {b} = {difference}")
+
+# Multiplication
+product = a * b
+print(f"Multiplication: {a} * {b} = {product}")
+
+# Division
+division_result = a / b
+print(f"Division: {a} / {b} = {division_result}")
+
+# Exponentiation
+exponent_result = a ** b
+print(f"Exponentiation: {a} ** {b} = {exponent_result}")
+
+# Integer Division (Floor Division)
+integer_division_result = a // b
+print(f"Integer Division: {a} // {b} = {integer_division_result}")
+
+# Modulo (Remainder)
+remainder = a % b
+print(f"Modulo: {a} % {b} = {remainder}")
+
+# Square Root
+sqrt_result = math.sqrt(a)
+print(f"Square Root of {a}: {sqrt_result}")
+
+
+# We perform basic mathematical operations, including addition, subtraction, multiplication, division, exponentiation, integer division (floor division), and modulo (remainder).
+
+# For square root, we import the math module and use the math.sqrt() function to calculate the square root of a number.
+
+# When you run this code, it will calculate and print the results of these mathematical operations using the values of a and b. You can modify the values of a and b to perform the operations with different numbers.

@@ -1,0 +1,80 @@
+# Creating a list
+my_list = [1, 2, 3, 4, 5]
+
+# Accessing elements by index
+print("Element at index 2:", my_list[2])
+
+# Slicing a list
+print("Sliced list (index 1 to 3):", my_list[1:4])
+
+# Modifying elements
+my_list[0] = 10
+print("Modified list:", my_list)
+
+# Appending an element
+my_list.append(6)
+print("List after appending 6:", my_list)
+
+# Extending the list with another list
+my_list.extend([7, 8, 9])
+print("List after extending:", my_list)
+
+# Inserting an element at a specific index
+my_list.insert(2, 100)
+print("List after inserting 100 at index 2:", my_list)
+
+# Removing an element by value
+my_list.remove(4)
+print("List after removing 4:", my_list)
+
+# Popping the last element
+popped_element = my_list.pop()
+print("Popped element:", popped_element)
+print("List after popping:", my_list)
+
+# Finding the index of an element
+index = my_list.index(5)
+print("Index of 5:", index)
+
+# Counting the occurrences of an element
+count = my_list.count(2)
+print("Count of 2:", count)
+
+# Reversing the list
+my_list.reverse()
+print("Reversed list:", my_list)
+
+# Sorting the list
+my_list.sort()
+print("Sorted list in ascending order:", my_list)
+
+# Sorting the list in reverse order
+my_list.sort(reverse=True)
+print("Sorted list in descending order:", my_list)
+
+
+# We create a list my_list containing integers.
+
+# We access elements by index using square brackets, e.g., my_list[2] to access the element at index 2.
+
+# We slice the list using colon notation, e.g., my_list[1:4] to get elements from index 1 to 3.
+
+# We modify elements using assignment, e.g., my_list[0] = 10 to change the first element to 10.
+
+# We append elements to the end of the list using append().
+
+# We extend the list with another list using extend().
+
+# We insert an element at a specific index using insert().
+
+# We remove an element by value using remove().
+
+# We pop the last element using pop(), which also returns the removed element.
+
+# We find the index of an element using index().
+
+# We count the occurrences of an element using count().
+
+# We reverse the list using reverse().
+
+# We sort the list in ascending and descending order using sort().

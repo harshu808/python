@@ -1,0 +1,35 @@
+import struct
+
+# Define a binary data format (e.g., for a simple employee record)
+# Format: Employee ID (int), Name (string, length 20), Salary (float)
+record_format = "i20sf"
+
+# Sample data
+employee_data = (101, "John Doe", 50000.0)
+
+# Pack the data into binary format
+binary_data = struct.pack(record_format, *employee_data)
+
+# Print the binary data (in hexadecimal representation)
+print("Binary Data:", binary_data.hex())
+
+# Unpack the binary data back into individual fields
+unpacked_data = struct.unpack(record_format, binary_data)
+
+# Print the unpacked data
+print("Unpacked Data:", unpacked_data)
+
+
+# We import the struct module, which provides functions for packing and unpacking binary data.
+
+# We define a binary data format using the record_format variable. In this example, the format specifies an integer (employee ID), a 20-character string (employee name), and a floating-point number (employee salary).
+
+# We provide sample data for an employee record using the employee_data tuple.
+
+# We use struct.pack() to pack the data into binary format according to the specified format.
+
+# We print the binary data in hexadecimal representation using the hex() method.
+
+# We use struct.unpack() to unpack the binary data back into individual fields, following the same format.
+
+# Finally, we print the unpacked data, which should match the original data.

@@ -1,0 +1,39 @@
+import os
+
+# Get the current working directory
+current_directory = os.getcwd()
+print("Current Working Directory:", current_directory)
+
+# List files and directories in the current directory
+print("\nFiles and Directories in the Current Directory:")
+for item in os.listdir(current_directory):
+    print(item)
+
+# Create a new directory
+new_directory = "example_directory"
+os.mkdir(new_directory)
+print("\nCreated a new directory:", new_directory)
+
+# Rename the new directory
+new_name = "renamed_directory"
+os.rename(new_directory, new_name)
+print("Renamed the directory to:", new_name)
+
+# Remove the renamed directory
+os.rmdir(new_name)
+print("Removed the directory:", new_name)
+
+
+# We import the os module, which provides functions for interacting with the operating system.
+
+# We use os.getcwd() to get the current working directory and print it.
+
+# We list the files and directories in the current directory using os.listdir() and print them.
+
+# We create a new directory called "example_directory" using os.mkdir().
+
+# We rename the newly created directory to "renamed_directory" using os.rename().
+
+# Finally, we remove the "renamed_directory" using os.rmdir().
+
+# Make sure to run this code in an environment where you have the necessary permissions to create, rename, and remove directories. The output will show the interactions with the operating system, such as the current working directory, the list of files and directories, and the creation, renaming, and removal of a directory.

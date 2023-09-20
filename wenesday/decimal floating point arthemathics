@@ -1,0 +1,31 @@
+from decimal import Decimal, getcontext
+
+# Set the precision (number of decimal places)
+getcontext().prec = 4  # Set precision to 4 decimal places
+
+# Create Decimal objects
+decimal_num1 = Decimal('10.1234')
+decimal_num2 = Decimal('3.4567')
+
+# Perform basic arithmetic operations
+addition_result = decimal_num1 + decimal_num2
+subtraction_result = decimal_num1 - decimal_num2
+multiplication_result = decimal_num1 * decimal_num2
+division_result = decimal_num1 / decimal_num2
+
+# Display results
+print("Decimal 1:", decimal_num1)
+print("Decimal 2:", decimal_num2)
+print("Addition:", addition_result)
+print("Subtraction:", subtraction_result)
+print("Multiplication:", multiplication_result)
+print("Division:", division_result)
+
+
+# We import the Decimal class from the decimal module and use getcontext() to set the precision to four decimal places using getcontext().prec.
+
+# We create Decimal objects decimal_num1 and decimal_num2 with specific decimal values.
+
+# We perform basic arithmetic operations such as addition, subtraction, multiplication, and division using the Decimal objects.
+
+# We display the results of these arithmetic operations.

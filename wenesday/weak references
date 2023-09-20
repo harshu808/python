@@ -1,0 +1,42 @@
+import weakref
+
+# Define a class for demonstration
+
+
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __repr__(self):
+        return f"MyClass({self.value})"
+
+
+# Create an instance of MyClass
+obj = MyClass(42)
+
+# Create a weak reference to the object
+weak_ref = weakref.ref(obj)
+
+# Access the object through the weak reference
+retrieved_obj = weak_ref()
+print("Retrieved object:", retrieved_obj)
+
+# Delete the strong reference to the object
+del obj
+
+# Access the object through the weak reference after the strong reference is deleted
+retrieved_obj_after_deletion = weak_ref()
+print("Retrieved object after deletion:", retrieved_obj_after_deletion)
+
+
+# We define a simple MyClass class with a __init__ method to initialize an object with a value and a __repr__ method for better representation.
+
+# We create an instance of MyClass called obj.
+
+# We create a weak reference to obj using weakref.ref(obj) and store it in weak_ref.
+
+# We access the object referred to by weak_ref using retrieved_obj. At this point, obj is still a strong reference to the object, so retrieved_obj will refer to the same object.
+
+# We delete the strong reference obj using del obj. This means there are no more strong references to the object.
+
+# We access the object through the weak reference again using retrieved_obj_after_deletion. Since there are no strong references left, retrieved_obj_after_deletion will be None, indicating that the object has been garbage collected.

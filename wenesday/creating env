@@ -1,0 +1,26 @@
+<!-- Open your terminal or command prompt.
+
+Navigate to the directory where you want to create the virtual environment.
+
+Run the following commands based on your operating system: -->
+python -m venv myenv
+
+<!-- 
+Activate the virtual environment: -->
+
+myenv\Scripts\activate
+
+<!-- To deactivate the virtual environment and return to the global Python environment, simply run the command deactivate. -->
+
+
+# Create a virtual environment named 'myenv'
+python3 -m venv myenv
+
+# Activate the virtual environment (macOS and Linux)
+source myenv/bin/activate
+
+# Activate the virtual environment (Windows)
+myenv\Scripts\activate
+
+# Deactivate the virtual environment
+deactivate

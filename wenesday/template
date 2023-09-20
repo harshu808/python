@@ -1,0 +1,25 @@
+import string
+
+# Create a template
+template = string.Template("Hello, $name! Your balance is $$${balance:0.2f}")
+
+# Define template variables
+name = "Alice"
+balance = 1234.5678
+
+# Substitute template variables with values
+result = template.substitute(name=name, balance=balance)
+
+# Print the result
+print(result)
+
+
+# We import the string module, which includes the Template class for basic string templating.
+
+# We create a template string using string.Template. Variable placeholders are denoted by $ followed by the variable name, e.g., $name and $$${balance:0.2f} for a formatted currency value.
+
+# We define the values for the template variables name and balance.
+
+# We use the substitute() method of the template to replace the placeholders with the defined values.
+
+# Finally, we print the result, which is the template with the placeholders replaced by their respective values.

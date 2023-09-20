@@ -1,0 +1,11 @@
+# Create a generator expression to generate squares of numbers from 1 to 5
+squared_numbers_generator = (x**2 for x in range(1, 6))
+
+# Iterate over the generator and print each square
+for square in squared_numbers_generator:
+    print(square)
+
+
+# We create a generator expression (x**2 for x in range(1, 6)) that generates the squares of numbers from 1 to 5. The for loop hasn't started iterating yet, so no values have been generated at this point.
+
+# We then use a for loop to iterate over the generator. As we iterate, each value is generated one at a time, and the square of the current number is printed.

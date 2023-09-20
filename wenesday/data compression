@@ -1,0 +1,28 @@
+import gzip
+import io
+
+# Data to be compressed
+data_to_compress = b"This is some data to compress."
+
+# Compress the data
+compressed_data = gzip.compress(data_to_compress)
+
+# Decompress the data
+decompressed_data = gzip.decompress(compressed_data)
+
+# Verify that the decompressed data matches the original data
+if data_to_compress == decompressed_data:
+    print("Data compression and decompression successful.")
+else:
+    print("Data compression and decompression failed.")
+
+
+# We import the gzip module, which provides functions for GZIP compression and decompression.
+
+# We define the data_to_compress variable with the data you want to compress. In this example, we use a simple byte string.
+
+# We use gzip.compress(data_to_compress) to compress the data.
+
+# We use gzip.decompress(compressed_data) to decompress the compressed data.
+
+# We verify that the decompressed data matches the original data to ensure that compression and decompression were successful.

@@ -1,0 +1,37 @@
+# Using f-strings (Python 3.6+)
+name = "Alice"
+age = 30
+
+# Format the output using f-strings
+print(f"My name is {name} and I am {age} years old.")
+
+# Using the % operator (old-style string formatting)
+percentage = 75.5
+
+# Format the output using the % operator
+print("The percentage is %.2f%%" % percentage)
+
+# Using the str.format() method (Python 2.7+ and Python 3.x)
+product = "Computer"
+price = 1200
+
+# Format the output using str.format()
+output = "The {} costs ${}".format(product, price)
+print(output)
+
+# Alternative str.format() method with named placeholders (Python 3.6+)
+country = "France"
+capital = "Paris"
+
+# Format the output using named placeholders
+print("The capital of {country} is {capital}".format(
+    country=country, capital=capital))
+
+
+# We use f-strings to format a string with variables directly inside the string. This is available in Python 3.6 and later.
+
+# We use the % operator for old-style string formatting, where placeholders like %s and %f are replaced by the values specified after the % operator. This is the older way of formatting strings but still works.
+
+# We use the str.format() method to format a string by providing placeholders inside the string using {} and then using the format() method to replace the placeholders with values.
+
+# In the last part, we demonstrate the use of named placeholders with str.format(), where variables are passed to the format() method as keyword arguments.

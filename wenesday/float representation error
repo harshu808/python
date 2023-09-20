@@ -1,0 +1,11 @@
+from decimal import Decimal
+
+# Using Decimal to avoid representation error
+decimal_num1 = Decimal('1.1')
+decimal_num2 = Decimal('2.2')
+decimal_sum = decimal_num1 + decimal_num2
+
+print("Sum of 1.1 and 2.2 (Decimal):", decimal_sum)
+
+
+# In this modified code, we convert the decimal numbers 1.1 and 2.2 to Decimal objects using string representations, which ensures precise decimal arithmetic. The result obtained using Decimal will be 3.3 without representation error.

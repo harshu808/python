@@ -1,0 +1,28 @@
+import sys
+
+# Redirect error output (stderr) to a file
+try:
+    with open("error.log", "w") as error_file:
+        sys.stderr = error_file  # Redirect stderr to the error.log file
+
+    # Simulate an error by dividing by zero
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print(f"Error: {e}", file=sys.stderr)  # Print the error message to stderr
+
+# Restore stderr to its original state
+sys.stderr = sys.__stderr__
+
+# Terminate the program with an exit code
+sys.exit(1)  # Exit the program with a non-zero exit code (indicating an error)
+
+
+# We import the sys module to work with error output redirection and program termination.
+
+# We use a try block to demonstrate error output redirection. We open a file called "error.log" in write mode and redirect the sys.stderr stream to this file using sys.stderr = error_file. This means that any error messages printed to sys.stderr will be redirected to the "error.log" file.
+
+# Inside the try block, we intentionally raise a ZeroDivisionError by attempting to divide by zero. We catch this exception and print an error message to sys.stderr using print().
+
+# After handling the error, we restore sys.stderr to its original state using sys.stderr = sys.__stderr__. This ensures that future error messages will be printed to the default error output (usually the console).
+
+# Finally, we use sys.exit(1) to terminate the program with an exit code of 1, indicating that an error occurred. You can use different exit codes to indicate different error conditions or success (usually 0 for success and non-zero values for errors).
