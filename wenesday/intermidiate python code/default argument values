@@ -1,0 +1,37 @@
+def print_student_info(name, age, major='Undeclared', enrolled=True):
+    """
+    Print information about a student.
+
+    :param name: The name of the student.
+    :param age: The age of the student.
+    :param major: The major of the student (default is 'Undeclared').
+    :param enrolled: Whether the student is currently enrolled (default is True).
+    """
+    print(f"Name: {name}")
+    print(f"Age: {age}")
+    print(f"Major: {major}")
+    if enrolled:
+        print("Status: Enrolled")
+    else:
+        print("Status: Not Enrolled")
+
+
+# Test the function with different scenarios
+print("Student 1:")
+print_student_info('Alice', 25, 'Computer Science')
+print("\nStudent 2:")
+print_student_info('Bob', 21, enrolled=False)
+print("\nStudent 3:")
+print_student_info('Charlie', 19)
+
+
+# We define a function print_student_info that takes four parameters: name, age, major, and enrolled. major and enrolled have default values set.
+
+# We provide a docstring for the function to describe its purpose and parameters.
+
+# We test the function with three different scenarios:
+
+# Student Alice has a specified major, and the default value for enrolled is used.
+# Student Bob is not currently enrolled, and the default value for major is used.
+# Student Charlie has both major and enrolled values using the defaults.
+# By providing default argument values for major and enrolled, we make the function more flexible and user-friendly. Users can choose to provide values for these parameters or rely on the defaults when calling the function.

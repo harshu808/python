@@ -1,0 +1,14 @@
+text = "Python is a versatile programming language."
+
+# Count the number of words
+word_count = len(text.split())
+
+# Convert to uppercase
+uppercase_text = text.upper()
+
+# Replace a substring
+replaced_text = text.replace("versatile", "powerful")
+
+print(f"Word count: {word_count}")
+print(f"Uppercase text: {uppercase_text}")
+print(f"Replaced text: {replaced_text}")

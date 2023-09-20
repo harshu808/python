@@ -1,0 +1,48 @@
+# Define a custom class for pattern matching
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+# Function to match points and perform actions
+
+
+def process_point(point):
+    match point:
+        case Point(0, 0):
+            print("Point is at the origin.")
+        case Point(0, _):
+            print("Point is on the y-axis.")
+        case Point(_, 0):
+            print("Point is on the x-axis.")
+        case Point(x, y) if x == y:
+            print("Point is on the line y = x.")
+        case _:
+            print("Point is in an arbitrary position.")
+
+
+# Test the pattern matching with points
+p1 = Point(0, 0)
+p2 = Point(0, 5)
+p3 = Point(3, 0)
+p4 = Point(2, 2)
+p5 = Point(4, 7)
+
+process_point(p1)
+process_point(p2)
+process_point(p3)
+process_point(p4)
+process_point(p5)
+
+
+# We define a custom class Point to represent 2D points with x and y coordinates.
+
+# The process_point function uses the new match statement introduced in Python 3.10 to perform pattern matching on Point objects.
+
+# Inside the match statement, we define various cases using patterns:
+
+# The first case checks if the point is at the origin (0, 0).
+# The second and third cases check if the point is on the y-axis or x-axis, respectively.
+# The fourth case checks if the point lies on the line y = x.
+# The last case is a catch-all case for arbitrary positions.
+# We test the pattern matching by creating different Point objects and passing them to the process_point function.

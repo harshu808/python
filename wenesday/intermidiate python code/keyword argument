@@ -1,0 +1,41 @@
+def create_employee_record(name, age, position='Employee', **kwargs):
+    """
+    Create an employee record.
+
+    :param name: The name of the employee.
+    :param age: The age of the employee.
+    :param position: The job position of the employee (default is 'Employee').
+    :param kwargs: Additional information about the employee.
+    :return: A dictionary representing the employee record.
+    """
+    record = {'Name': name, 'Age': age, 'Position': position}
+    record.update(kwargs)
+    return record
+
+
+# Test the function with keyword arguments
+employee1 = create_employee_record(
+    name='Alice', age=30, department='Engineering', salary=75000)
+employee2 = create_employee_record(
+    name='Bob', age=25, position='Manager', salary=90000, city='New York')
+
+# Print the employee records
+print("Employee 1:")
+for key, value in employee1.items():
+    print(f"{key}: {value}")
+print("\nEmployee 2:")
+for key, value in employee2.items():
+    print(f"{key}: {value}")
+
+
+# We define a function create_employee_record that takes three required parameters (name, age, and position) and allows for additional keyword arguments using **kwargs.
+
+# We provide a docstring for the function to describe its purpose and parameters.
+
+# We test the function with two different scenarios:
+
+# Employee Alice has a specified department and salary in addition to the required parameters.
+# Employee Bob has a specified position, salary, and city in addition to the required parameters.
+# We create employee records as dictionaries using the function and keyword arguments.
+
+# We print the employee records, showing how keyword arguments can be used to provide additional information about each employee.

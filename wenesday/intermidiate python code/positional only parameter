@@ -1,0 +1,40 @@
+def calculate_payment(hours_worked, hourly_rate=15.0, /, *bonus_args, deductions=0, **extra_kwargs):
+    """
+    Calculate an employee's payment.
+
+    :param hours_worked: The number of hours worked (positional-only).
+    :param hourly_rate: The hourly rate (default is $15.0).
+    :param bonus_args: Additional positional bonus arguments (as a tuple).
+    :param deductions: Deductions from the payment (default is $0).
+    :param extra_kwargs: Additional keyword arguments.
+    :return: The total payment amount.
+    """
+    base_payment = hours_worked * hourly_rate
+    bonus_payment = sum(bonus_args)
+    total_payment = base_payment + bonus_payment - deductions
+
+    # Process and print any extra keyword arguments
+    for key, value in extra_kwargs.items():
+        print(f"Additional argument '{key}': {value}")
+
+    return total_payment
+
+
+# Test the function with positional-only parameters
+payment1 = calculate_payment(40, 20.0, 100, 200, deductions=50, tax=5)
+payment2 = calculate_payment(30, 10.0, 25, 30, deductions=20, tax=5)
+
+# Print the calculated payments
+print(f"Payment 1: ${payment1:.2f}")
+print(f"Payment 2: ${payment2:.2f}")
+
+
+# We define a function calculate_payment that takes hours_worked as a positional-only parameter (indicated by the / in the parameter list), hourly_rate as a regular parameter with a default value, bonus_args as additional positional arguments collected into a tuple, deductions as a keyword argument with a default value, and extra_kwargs to capture any additional keyword arguments.
+
+# We provide a docstring for the function to describe its purpose and parameters.
+
+# We test the function with two different scenarios, similar to the previous example, using both positional and keyword arguments.
+
+# We calculate the payments for the employees using the function, considering the various arguments and bonuses.
+
+# We print the calculated payments and process any extra keyword arguments provided.

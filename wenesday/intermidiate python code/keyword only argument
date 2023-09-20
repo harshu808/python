@@ -1,0 +1,41 @@
+def calculate_payment(hours_worked, *, hourly_rate=15.0, deductions=0, **extra_kwargs):
+    """
+    Calculate an employee's payment.
+
+    :param hours_worked: The number of hours worked.
+    :param hourly_rate: The hourly rate (default is $15.0).
+    :param deductions: Deductions from the payment (default is $0).
+    :param extra_kwargs: Additional keyword arguments.
+    :return: The total payment amount.
+    """
+    base_payment = hours_worked * hourly_rate
+    total_payment = base_payment - deductions
+
+    # Process and print any extra keyword arguments
+    for key, value in extra_kwargs.items():
+        print(f"Additional argument '{key}': {value}")
+
+    return total_payment
+
+
+# Test the function with keyword-only arguments
+payment1 = calculate_payment(40, hourly_rate=20.0, deductions=50, tax=5)
+payment2 = calculate_payment(
+    30, hourly_rate=10.0, deductions=20, tax=5, bonus=100)
+
+# Print the calculated payments
+print(f"Payment 1: ${payment1:.2f}")
+print(f"Payment 2: ${payment2:.2f}")
+
+
+# We define a function calculate_payment that takes hours_worked as a positional parameter, hourly_rate and deductions as keyword-only parameters (indicated by * in the parameter list), and extra_kwargs to capture any additional keyword arguments.
+
+# We provide a docstring for the function to describe its purpose and parameters.
+
+# We test the function with two different scenarios:
+
+# Employee 1 worked 40 hours at an hourly rate of $20.0, had $50 in deductions, and also specified the tax keyword argument.
+# Employee 2 worked 30 hours at an hourly rate of $10.0, had $20 in deductions, and specified both the tax and bonus keyword arguments.
+# We calculate the payments for the employees using the function, considering the various keyword-only arguments and any additional keyword arguments provided.
+
+# We print the calculated payments and process any extra keyword arguments provided.

@@ -1,0 +1,48 @@
+# Example data: a list of numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Create a list of squares for even numbers using a list comprehension
+squares_of_evens = [x**2 for x in numbers if x % 2 == 0]
+
+# Create a list of cubes for odd numbers using a list comprehension
+cubes_of_odds = [x**3 for x in numbers if x % 2 != 0]
+
+# Create a list of strings representing the numbers with their parity
+parity_strings = [f"{x} is {'even' if x % 2 == 0 else 'odd'}" for x in numbers]
+
+# Create a list of prime numbers using a list comprehension and a helper function
+
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
+prime_numbers = [x for x in numbers if is_prime(x)]
+
+# Create a list of lists using nested list comprehensions
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_matrix = [element for row in matrix for element in row]
+
+# Print the generated lists
+print("Squares of even numbers:", squares_of_evens)
+print("Cubes of odd numbers:", cubes_of_odds)
+print("Parity strings:", parity_strings)
+print("Prime numbers:", prime_numbers)
+print("Flattened matrix:", flattened_matrix)
+
+
+# We start with a list of numbers from 1 to 10.
+
+# We use list comprehensions to create new lists based on the original list:
+
+# squares_of_evens contains the squares of even numbers.
+# cubes_of_odds contains the cubes of odd numbers.
+# parity_strings contains strings describing the parity of each number.
+# prime_numbers contains only the prime numbers from the original list.
+# flattened_matrix flattens a nested list (matrix) into a single list.
+# We also define a helper function is_prime to determine if a number is prime and use it in the list comprehension to filter prime numbers.

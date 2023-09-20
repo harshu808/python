@@ -1,0 +1,11 @@
+def calculate_stats(numbers):
+    total = sum(numbers)
+    average = total / len(numbers)
+    maximum = max(numbers)
+    minimum = min(numbers)
+    return total, average, maximum, minimum
+
+
+data = [10, 20, 30, 40, 50]
+total, avg, max_val, min_val = calculate_stats(data)
+print(f"Total: {total}, Average: {avg}, Max: {max_val}, Min: {min_val}")

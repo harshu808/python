@@ -1,0 +1,93 @@
+class Stack:
+    """
+    A custom stack class implemented using Python lists.
+    """
+
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        """
+        Check if the stack is empty.
+
+        Returns:
+            bool: True if the stack is empty, False otherwise.
+        """
+        return not bool(self.items)
+
+    def push(self, item):
+        """
+        Push an item onto the stack.
+
+        Args:
+            item: The item to be pushed onto the stack.
+        """
+        self.items.append(item)
+
+    def pop(self):
+        """
+        Pop the top item from the stack and return it.
+
+        Returns:
+            The top item from the stack.
+        """
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            raise IndexError("Stack is empty")
+
+    def peek(self):
+        """
+        Peek at the top item of the stack without removing it.
+
+        Returns:
+            The top item from the stack.
+        """
+        if not self.is_empty():
+            return self.items[-1]
+        else:
+            raise IndexError("Stack is empty")
+
+    def size(self):
+        """
+        Get the number of items in the stack.
+
+        Returns:
+            int: The number of items in the stack.
+        """
+        return len(self.items)
+
+
+# Test the custom stack class
+stack = Stack()
+
+# Push items onto the stack
+stack.push(10)
+stack.push(20)
+stack.push(30)
+
+# Print the stack contents
+print("Stack Contents:")
+while not stack.is_empty():
+    print(stack.pop())
+
+# Check the size of the stack
+print("Stack Size:", stack.size())
+
+# Attempt to peek and pop from an empty stack
+try:
+    print("Peek:", stack.peek())
+except IndexError as e:
+    print("Error:", e)
+
+try:
+    print("Pop:", stack.pop())
+except IndexError as e:
+    print("Error:", e)
+
+
+# We define a Stack class that implements a stack using a Python list as the underlying data structure.
+
+# The class provides methods for checking if the stack is empty (is_empty), pushing items onto the stack (push), popping the top item from the stack (pop), peeking at the top item without removing it (peek), and getting the size of the stack (size).
+
+# We test the custom stack class by pushing items onto the stack, printing the stack contents, checking the size of the stack, and attempting to peek and pop from an empty stack.

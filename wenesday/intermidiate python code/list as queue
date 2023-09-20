@@ -1,0 +1,93 @@
+class Queue:
+    """
+    A custom queue class implemented using Python lists.
+    """
+
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        """
+        Check if the queue is empty.
+
+        Returns:
+            bool: True if the queue is empty, False otherwise.
+        """
+        return not bool(self.items)
+
+    def enqueue(self, item):
+        """
+        Enqueue (add) an item to the end of the queue.
+
+        Args:
+            item: The item to be added to the queue.
+        """
+        self.items.append(item)
+
+    def dequeue(self):
+        """
+        Dequeue (remove) and return the item from the front of the queue.
+
+        Returns:
+            The item from the front of the queue.
+        """
+        if not self.is_empty():
+            return self.items.pop(0)
+        else:
+            raise IndexError("Queue is empty")
+
+    def peek(self):
+        """
+        Peek at the front item of the queue without removing it.
+
+        Returns:
+            The item from the front of the queue.
+        """
+        if not self.is_empty():
+            return self.items[0]
+        else:
+            raise IndexError("Queue is empty")
+
+    def size(self):
+        """
+        Get the number of items in the queue.
+
+        Returns:
+            int: The number of items in the queue.
+        """
+        return len(self.items)
+
+
+# Test the custom queue class
+queue = Queue()
+
+# Enqueue items into the queue
+queue.enqueue("A")
+queue.enqueue("B")
+queue.enqueue("C")
+
+# Print the queue contents
+print("Queue Contents:")
+while not queue.is_empty():
+    print("Dequeue:", queue.dequeue())
+
+# Check the size of the queue
+print("Queue Size:", queue.size())
+
+# Attempt to peek and dequeue from an empty queue
+try:
+    print("Peek:", queue.peek())
+except IndexError as e:
+    print("Error:", e)
+
+try:
+    print("Dequeue:", queue.dequeue())
+except IndexError as e:
+    print("Error:", e)
+
+
+# We define a Queue class that implements a queue using a Python list as the underlying data structure.
+
+# The class provides methods for checking if the queue is empty (is_empty), enqueueing items to the end of the queue (enqueue), dequeuing items from the front of the queue (dequeue), peeking at the front item without removing it (peek), and getting the size of the queue (size).
+
+# We test the custom queue class by enqueuing items into the queue, printing the queue contents, checking the size of the queue, and attempting to peek and dequeue from an empty queue.

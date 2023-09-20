@@ -1,0 +1,38 @@
+def calculate_total_cost(base_price=0, tax_rate=0.1, *item_prices, **item_discounts):
+    """
+    Calculate the total cost of items with variable prices and discounts.
+
+    :param base_price: The base price (default is $0).
+    :param tax_rate: The tax rate (default is 10%).
+    :param item_prices: Variable-length positional arguments representing item prices.
+    :param item_discounts: Variable-length keyword arguments representing item discounts.
+    :return: The total cost including tax and discounts.
+    """
+    subtotal = sum(item_prices) + base_price
+    total_discount = sum(item_discounts.values())
+    total_tax = subtotal * tax_rate
+    total_cost = subtotal - total_discount + total_tax
+    return total_cost
+
+
+# Test the function by unpacking argument lists
+item_prices = [50, 30, 25]
+item_discounts = {'discount1': 10, 'discount2': 5}
+
+total_cost = calculate_total_cost(10, 0.15, *item_prices, **item_discounts)
+
+# Print the calculated total cost
+print(f"Total Cost: ${total_cost:.2f}")
+
+
+# We define a function calculate_total_cost that accepts a base price, a tax rate, variable-length positional arguments *item_prices, and variable-length keyword arguments **item_discounts.
+
+# We provide a docstring for the function to describe its purpose and parameters.
+
+# We test the function by creating a list of item prices (item_prices), a dictionary of item discounts (item_discounts), and then passing them to the function by unpacking the lists and dictionaries.
+
+# Inside the function, we calculate the subtotal of item prices, the total discount, the total tax, and the total cost.
+
+# We use the * and ** syntax when calling the function to unpack the item prices and discounts.
+
+# Finally, we print the calculated total cost, which includes tax and discounts.

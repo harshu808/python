@@ -1,0 +1,26 @@
+# List of dictionaries representing books
+books = [
+    {'title': 'Python Crash Course', 'author': 'Eric Matthes', 'price': 29.99},
+    {'title': 'Clean Code', 'author': 'Robert C. Martin', 'price': 39.99},
+    {'title': 'The Pragmatic Programmer', 'author': 'Andrew Hunt', 'price': 42.95},
+    {'title': 'Fluent Python', 'author': 'Luciano Ramalho', 'price': 49.99},
+    {'title': 'Effective Python', 'author': 'Brett Slatkin', 'price': 32.99}
+]
+
+# Sort the list of dictionaries by the 'price' key using a lambda expression
+sorted_books = sorted(books, key=lambda x: x['price'])
+
+# Print the sorted list of dictionaries
+print("Sorted Books by Price:")
+for book in sorted_books:
+    print(
+        f"Title: {book['title']}, Author: {book['author']}, Price: ${book['price']:.2f}")
+
+
+# We have a list of dictionaries, where each dictionary represents a book with keys 'title', 'author', and 'price'.
+
+# We use the sorted function to sort the list of dictionaries based on the 'price' key. To achieve this, we pass a lambda expression as the key argument to sorted. The lambda expression extracts the 'price' value from each dictionary for comparison during sorting.
+
+# The resulting sorted_books list contains the dictionaries sorted by the 'price' key in ascending order.
+
+# We then print the sorted list of dictionaries, displaying the book title, author, and price for each book.

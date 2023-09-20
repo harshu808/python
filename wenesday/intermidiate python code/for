@@ -1,0 +1,4 @@
+# Read lines from a text file and print them
+with open('sample.txt', 'r') as file:
+    for line in file:
+        print(line.strip())  # Strip whitespace and newline characters
