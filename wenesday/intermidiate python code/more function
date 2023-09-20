@@ -1,19 +1,10 @@
-import time
+numbers = [1, 2, 3, 4, 5]
 
+# Use map and lambda to square each element
+squared_numbers = list(map(lambda x: x**2, numbers))
+print("Squared numbers:", squared_numbers)
 
-def timing_decorator(func):
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        print(f"Execution time: {end_time - start_time:.4f} seconds")
-        return result
-    return wrapper
+# Use map and lambda to double each element
+doubled_numbers = list(map(lambda x: x * 2, numbers))
+print("Doubled numbers:", doubled_numbers)
 
-
-@timing_decorator
-def slow_function():
-    time.sleep(2)
-
-
-slow_function()
