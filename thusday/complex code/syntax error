@@ -1,0 +1,58 @@
+# Syntax Error 1: Missing colon after 'if' statement
+if 5 > 3
+    print("Five is greater than three.")  # This line should be indented
+
+# Syntax Error 2: Indentation error (mixing tabs and spaces)
+
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+       print(i + 1)  # This line should have consistent indentation
+
+# Syntax Error 3: Unmatched parentheses
+message = "Hello, World!
+print(message)  # Missing closing double quote and parentheses
+
+# Syntax Error 4: Using an undefined variable
+undefined_variable = 42
+print(undeifned_variable)  # Typo in the variable name
+
+# Syntax Error 5: Mismatched parentheses
+def add_numbers(a, b:
+    return a + b  # Missing closing parenthesis
+
+# Syntax Error 6: Invalid escape sequence
+invalid_string = "This is an invalid escape sequence: \x"
+print(invalid_string)
+
+# Syntax Error 7: Missing closing brace in a dictionary
+person = {"name": "Alice", "age": 30,  # Missing closing brace
+
+# Syntax Error 8: Indentation error within a block
+def function_with_error():
+print("This line is not properly indented.")  # Missing indentation
+
+# Syntax Error 9: Unmatched opening brace
+result = 5 * (3 + 2  # Missing closing parenthesis
+
+# Syntax Error 10: Using reserved keyword as a variable name
+class = "Python"  # 'class' is a reserved keyword
+
+# Syntax Error 11: Mixing single and double quotes
+mixed_quotes = 'This string uses double quotes."
+
+# Syntax Error 12: Missing 'else' after 'if' condition
+if 5 < 3:
+    print("Five is less than three.")
+elif 5 == 3:
+    print("Five is equal to three.")
+# Missing 'else' block
+
+# Syntax Error 13: Invalid characters
+print("Invalid character: ©")  # Non-ASCII character
+
+# Syntax Error 14: Unmatched triple quotes for a docstring
+def function_with_docstring():
+    """
+    This is a docstring without closing triple quotes.

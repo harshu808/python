@@ -1,0 +1,61 @@
+# Class definition 'Student'
+class Student:
+    # Class variable shared by all instances
+    student_count = 0
+
+    def __init__(self, name, age, student_id):
+        # Instance variables unique to each instance
+        self.name = name
+        self.age = age
+        self.student_id = student_id
+
+        # Increment the class variable to count students
+        Student.student_count += 1
+
+    # Instance method to introduce the student
+    def introduce(self):
+        print(
+            f"Hi, I'm {self.name}, and I'm {self.age} years old. Student ID: {self.student_id}")
+
+
+# Create instances of 'Student' class
+student1 = Student("Alice", 18, "S12345")
+student2 = Student("Bob", 19, "S67890")
+student3 = Student("Charlie", 20, "S78901")
+
+# Demonstrate instance objects
+print("Instance Objects Example:\n")
+
+# Access instance variables and call instance methods
+print("Instance Variables and Methods:")
+print(
+    f"Student 1: Name - {student1.name}, Age - {student1.age}, Student ID - {student1.student_id}")
+print(
+    f"Student 2: Name - {student2.name}, Age - {student2.age}, Student ID - {student2.student_id}")
+print(
+    f"Student 3: Name - {student3.name}, Age - {student3.age}, Student ID - {student3.student_id}")
+
+# Call the 'introduce' method for each student
+print("\nIntroducing Students:")
+student1.introduce()
+student2.introduce()
+student3.introduce()
+
+# Access the class variable 'student_count'
+print(f"\nTotal students: {Student.student_count}")
+
+
+# 'Student' Class:
+
+# We define the 'Student' class with class variables (student_count) and instance variables (name, age, student_id).
+# The class also has an instance method (introduce) to introduce a student.
+# Instance Objects:
+
+# We create three instances (student1, student2, student3) of the 'Student' class.
+# Each instance represents a different student with unique attributes.
+# Accessing Instance Variables and Methods:
+
+# We access instance variables (name, age, student_id) and call the introduce method for each student instance.
+# Class Variable 'student_count':
+
+# We demonstrate how to access the class variable student_count to count the number of students created.

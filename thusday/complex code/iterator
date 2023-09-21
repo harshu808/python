@@ -1,0 +1,73 @@
+# Define a custom iterator class 'Countdown'
+class Countdown:
+    def __init__(self, start):
+        self.start = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.start < 0:
+            raise StopIteration
+        else:
+            current = self.start
+            self.start -= 1
+            return current
+
+
+# Create an instance of 'Countdown' with a starting value
+countdown = Countdown(5)
+
+# Demonstrate using the iterator
+print("Iterator Example:\n")
+
+# Using a for loop to iterate through the countdown
+print("Countdown:")
+for value in countdown:
+    print(value)
+
+# Create a list of cities
+cities = ["New York", "London", "Paris", "Tokyo"]
+
+# Create an iterator from the list
+city_iterator = iter(cities)
+
+# Using 'next()' to manually iterate through the iterator
+print("\nManual Iteration:")
+try:
+    while True:
+        city = next(city_iterator)
+        print(city)
+except StopIteration:
+    pass
+
+# Using 'iter()' and 'next()' in a loop
+print("\nUsing 'iter()' and 'next()' in a Loop:")
+city_iterator = iter(cities)
+while True:
+    try:
+        city = next(city_iterator)
+        print(city)
+    except StopIteration:
+        break
+
+
+# Custom Iterator Class 'Countdown':
+
+# We define a custom iterator class named 'Countdown' that starts counting down from a given value.
+# Implementing the Iterator Protocol:
+
+# The __iter__ method returns the iterator object itself.
+# The __next__ method is responsible for generating the next value in the sequence and raising StopIteration when done.
+# Creating and Using the Iterator:
+
+# We create an instance of the 'Countdown' class and use it in a for loop.
+# Creating an Iterator from a List:
+
+# We create an iterator from a list of cities using the iter() function.
+# Manually Iterating with 'next()':
+
+# We manually iterate through the city iterator using next() and handle the StopIteration exception.
+# Using 'iter()' and 'next()' in a Loop:
+
+# We demonstrate how to use iter() and next() together in a loop to iterate through the iterator until StopIteration is raised.

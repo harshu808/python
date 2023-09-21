@@ -1,0 +1,119 @@
+# Custom exception class
+class MyCustomException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+
+# Function to demonstrate exception handling
+
+
+def complex_operation():
+    try:
+        # Division by zero
+        result = 10 / 0
+
+        # Index out of range
+        my_list = [1, 2, 3]
+        value = my_list[5]
+
+        # Custom exception
+        if value == 42:
+            raise MyCustomException("Value cannot be 42.")
+
+    except ZeroDivisionError as zde:
+        print(f"ZeroDivisionError: {zde}")
+    except IndexError as ie:
+        print(f"IndexError: {ie}")
+    except MyCustomException as mce:
+        print(f"MyCustomException: {mce}")
+    except Exception as e:
+        print(f"Exception: {e}")
+    else:
+        print("No exceptions occurred.")
+    finally:
+        print("Cleanup code always runs.")
+
+# Function to demonstrate exception propagation
+
+
+def propagate_exception():
+    try:
+        complex_operation()
+    except Exception as e:
+        print(f"Exception propagated: {e}")
+
+# Function to demonstrate raising exceptions
+
+
+def raise_custom_exception():
+    try:
+        value = 42
+        if value == 42:
+            raise MyCustomException("Value cannot be 42.")
+    except MyCustomException as mce:
+        print(f"MyCustomException: {mce}")
+
+# Function to demonstrate handling multiple exceptions
+
+
+def handle_multiple_exceptions():
+    try:
+        my_dict = {"key": "value"}
+        value = my_dict["missing_key"]  # KeyError
+
+        result = 10 / 0  # ZeroDivisionError
+    except (KeyError, ZeroDivisionError) as e:
+        print(f"Multiple Exceptions: {e}")
+
+# Function to demonstrate using 'finally' without 'except'
+
+
+def finally_without_except():
+    try:
+        print("Try block")
+    finally:
+        print("Finally block without except")
+
+# Function to demonstrate re-raising an exception
+
+
+def re_raise_exception():
+    try:
+        result = 10 / 0
+    except ZeroDivisionError as e:
+        print(f"Caught exception: {e}")
+        raise  # Re-raise the caught exception
+
+
+# Main program
+if __name__ == "__main__":
+    print("Exception Handling Examples:\n")
+
+    print("1. Complex Operation:")
+    complex_operation()
+
+    print("\n2. Propagate Exception:")
+    propagate_exception()
+
+    print("\n3. Raise Custom Exception:")
+    raise_custom_exception()
+
+    print("\n4. Handle Multiple Exceptions:")
+    handle_multiple_exceptions()
+
+    print("\n5. Finally Without Except:")
+    finally_without_except()
+
+    print("\n6. Re-raise Exception:")
+    try:
+        re_raise_exception()
+    except ZeroDivisionError as e:
+        print(f"Caught re-raised exception: {e}")
+
+
+# Defining a custom exception class (MyCustomException).
+# Demonstrating exception handling with try, except, else, and finally blocks.
+# Propagating exceptions to higher-level code.
+# Raising a custom exception using the raise statement.
+# Handling multiple exceptions using a tuple in the except clause.
+# Using the finally block without an except block.
+# Re-raising an exception using the raise statement.

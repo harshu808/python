@@ -1,0 +1,30 @@
+# Import modules from the main package and subpackage
+from ..directory2 import module3 as relative_module3
+from directory2 import module3, module4
+from directory1 import module1, module2
+from main_package import module5
+from main_package.subpackage import module6, module7
+
+# Use modules from the main package and subpackage
+module5.say_hello("Alice")
+module6.greet("Bob")
+module7.say_hi("Charlie")
+
+# Import modules from directory1 and directory2
+
+# Use modules from directory1 and directory2
+module1.print_message("Hello from directory1")
+module2.print_message("Hello from directory1")
+module3.print_message("Hello from directory2")
+module4.print_message("Hello from directory2")
+
+# You can also use relative imports within packages and subpackages
+# Importing module3 from directory2 using a relative import
+
+# Use the relative imported module
+relative_module3.print_message("Hello from directory2 (relative import)")
+
+
+# Import and use modules from the main package and its subpackage.
+# Import and use modules from separate directories (directory1 and directory2).
+# Use relative imports within packages and subpackages to access modules from different levels of the package structure.

@@ -1,0 +1,77 @@
+# Base class 'Vehicle'
+class Vehicle:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def start_engine(self):
+        print("Engine started.")
+
+    def stop_engine(self):
+        print("Engine stopped.")
+
+# Inheritance: 'Car' class inherits from 'Vehicle'
+
+
+class Car(Vehicle):
+    def __init__(self, make, model, year, fuel_type):
+        super().__init__(make, model, year)
+        self.fuel_type = fuel_type
+
+    def honk(self):
+        print("Honk! Honk!")
+
+# Inheritance: 'Motorcycle' class inherits from 'Vehicle'
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, make, model, year, engine_size):
+        super().__init__(make, model, year)
+        self.engine_size = engine_size
+
+    def wheelie(self):
+        print("Performing a wheelie!")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Inheritance Example:\n")
+
+    # Create instances of 'Car' and 'Motorcycle'
+    car = Car("Toyota", "Camry", 2022, "Gasoline")
+    motorcycle = Motorcycle("Honda", "CBR600RR", 2021, "600cc")
+
+    # Access inherited attributes and methods
+    print("Car Information:")
+    print(f"Make: {car.make}")
+    print(f"Model: {car.model}")
+    print(f"Year: {car.year}")
+    print(f"Fuel Type: {car.fuel_type}")
+    car.start_engine()
+    car.honk()
+
+    print("\nMotorcycle Information:")
+    print(f"Make: {motorcycle.make}")
+    print(f"Model: {motorcycle.model}")
+    print(f"Year: {motorcycle.year}")
+    print(f"Engine Size: {motorcycle.engine_size}")
+    motorcycle.start_engine()
+    motorcycle.wheelie()
+
+
+# Base Class 'Vehicle':
+
+# We define the 'Vehicle' class with attributes (make, model, year) and methods (start_engine, stop_engine).
+# Inheritance:
+
+# 'Car' and 'Motorcycle' classes inherit from the 'Vehicle' class.
+# They extend the base class by adding specific attributes (fuel_type and engine_size) and methods (honk and wheelie).
+# Creating Instances:
+
+# We create instances of the 'Car' and 'Motorcycle' classes.
+# Accessing Inherited Attributes and Methods:
+
+# We access and print the inherited attributes and methods for both the 'Car' and 'Motorcycle' instances.
+# We demonstrate how the 'start_engine' method is inherited and used by both classes.
+# We call the class-specific methods (honk and wheelie) on their respective instances.

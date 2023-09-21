@@ -1,0 +1,77 @@
+# Create two sets
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+
+# Perform set operations
+union_set = set1.union(set2)  # Union of set1 and set2
+intersection_set = set1.intersection(set2)  # Intersection of set1 and set2
+difference_set = set1.difference(set2)  # Elements in set1 but not in set2
+symmetric_difference_set = set1.symmetric_difference(
+    set2)  # Elements not common to both sets
+
+# Check for membership
+is_present = 3 in set1  # True if 3 is in set1
+
+# Add and remove elements
+set1.add(6)  # Add element 6 to set1
+set2.remove(7)  # Remove element 7 from set2 (raises KeyError if not present)
+
+# Discard an element (no error if element is not present)
+set2.discard(8)
+
+# Clear a set
+set1.clear()  # Removes all elements from set1
+
+# Create a frozen set (immutable set)
+frozen_set = frozenset([1, 2, 3, 4, 5])
+
+# Check if one set is a subset or superset of another
+is_subset = set1.issubset(set2)
+is_superset = set1.issuperset(set2)
+
+# Iterate over elements in a set
+for item in set2:
+    print(item)
+
+# Set comprehension
+set_from_list = {x for x in [1, 2, 3, 4, 5] if x % 2 == 0}
+
+# Find the size of a set
+set_size = len(set1)
+
+# Create a copy of a set
+copy_of_set2 = set2.copy()
+
+# Update a set with another set (in-place)
+set1.update({5, 6, 7})  # Adds elements to set1 that are not already present
+
+# Remove and return an arbitrary element from a set (raises KeyError if set is empty)
+popped_element = set1.pop()
+
+# Check if two sets are disjoint (have no elements in common)
+are_disjoint = set1.isdisjoint(set2)
+
+# Remove specific elements from a set using comprehension (in-place)
+elements_to_remove = {3, 4}
+set2 = {x for x in set2 if x not in elements_to_remove}
+
+# Create a set of sets
+set_of_sets = {frozenset({1, 2}), frozenset({3, 4}), frozenset({5, 6})}
+
+# Check if a set is empty
+is_empty = not bool(set1)
+
+# Convert a set to a list
+set_to_list = list(set2)
+
+# Convert a list to a set (removes duplicates)
+list_to_set = set([1, 2, 2, 3, 4, 4, 5])
+
+# Use a generator expression to create a set
+set_from_generator_expr = {x for x in range(
+    10) if x % 2 == 0}  # {0, 2, 4, 6, 8}
+
+# Create a set with elements from multiple lists
+list1 = [1, 2, 3]
+list2 = [3, 4, 5]
+set_from_lists = set(list1 + list2)  # {1, 2, 3, 4, 5}

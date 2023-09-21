@@ -1,0 +1,73 @@
+# Accessing the Module Search Path
+import os
+import sys
+
+# Print the list of directories in the module search path
+print("Module Search Path:")
+for path in sys.path:
+    print(path)
+
+# Modifying the Module Search Path
+# You can modify sys.path to add custom directories to the search path.
+
+# Add a custom directory to the module search path
+custom_dir = "/path/to/custom_directory"
+if custom_dir not in sys.path:
+    sys.path.append(custom_dir)
+
+# Verify if the custom directory is added to the search path
+if custom_dir in sys.path:
+    print(f"\n{custom_dir} has been added to the module search path.")
+
+# Import a module from the custom directory
+try:
+    import custom_module
+    print(f"Successfully imported custom_module from {custom_dir}.")
+except ImportError:
+    print("Failed to import custom_module.")
+
+# Using Site Packages
+# Python includes site-specific packages in the search path, such as third-party libraries installed using pip.
+
+# Import a third-party library (requests) installed via pip
+try:
+    import requests
+    print("\nSuccessfully imported the requests library.")
+except ImportError:
+    print("Failed to import the requests library.")
+
+# Creating a Local Package
+# You can create a local package and add it to the module search path.
+
+# Create a folder named 'mypackage' and add '__init__.py' (can be empty) and 'mymodule.py' to it.
+# 'mymodule.py' contains a function called 'greet'.
+# Directory structure:
+# mypackage/
+#     __init__.py
+#     mymodule.py
+
+# Add the parent directory of 'mypackage' to the module search path
+local_package_dir = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), 'mypackage'))
+sys.path.append(local_package_dir)
+
+# Verify if the local package directory is added to the search path
+if local_package_dir in sys.path:
+    print(f"\n{local_package_dir} has been added to the module search path.")
+
+# Import the 'greet' function from the local package
+try:
+    from mypackage import mymodule
+    print(f"Successfully imported 'greet' from the local package.")
+    greeting = mymodule.greet("Alice")
+    print(greeting)
+except ImportError:
+    print("Failed to import 'greet' from the local package.")
+
+
+# Access the module search path using sys.path and print its contents.
+# Modify the module search path to add a custom directory and verify the addition.
+# Import a module (custom_module) from the custom directory.
+# Import a third-party library (requests) from the site packages.
+# Create a local package (mypackage) and add it to the search path.
+# Import a function (greet) from the local package and use it.

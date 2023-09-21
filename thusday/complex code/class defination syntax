@@ -1,0 +1,121 @@
+# Base class 'Person'
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, and I'm {self.age} years old.")
+
+# Inheritance: 'Student' class inherits from 'Person'
+
+
+class Student(Person):
+    def __init__(self, name, age, student_id):
+        super().__init__(name, age)
+        self.student_id = student_id
+
+    def study(self, subject):
+        print(f"{self.name} is studying {subject}.")
+
+# Inheritance: 'Teacher' class inherits from 'Person'
+
+
+class Teacher(Person):
+    def __init__(self, name, age, employee_id):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+
+    def teach(self, subject):
+        print(f"{self.name} is teaching {subject}.")
+
+# Composition: 'School' class composed of students and teachers
+
+
+class School:
+    def __init__(self, name):
+        self.name = name
+        self.students = []
+        self.teachers = []
+
+    def add_student(self, student):
+        if isinstance(student, Student):
+            self.students.append(student)
+            print(f"{student.name} is enrolled in {self.name}.")
+        else:
+            print("Invalid student object.")
+
+    def add_teacher(self, teacher):
+        if isinstance(teacher, Teacher):
+            self.teachers.append(teacher)
+            print(f"{teacher.name} is now teaching at {self.name}.")
+        else:
+            print("Invalid teacher object.")
+
+    def show_students(self):
+        print(f"Students at {self.name}:")
+        for student in self.students:
+            print(f"{student.name} (ID: {student.student_id})")
+
+    def show_teachers(self):
+        print(f"Teachers at {self.name}:")
+        for teacher in self.teachers:
+            print(f"{teacher.name} (ID: {teacher.employee_id})")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Class Definition Syntax Example:\n")
+
+    # Create instances of 'Student' and 'Teacher' classes
+    student1 = Student("Alice", 18, "S12345")
+    student2 = Student("Bob", 19, "S67890")
+    teacher1 = Teacher("Mr. Smith", 35, "T123")
+    teacher2 = Teacher("Ms. Johnson", 28, "T456")
+
+    # Create an instance of the 'School' class
+    school = School("ABC High School")
+
+    # Add students and teachers to the school
+    school.add_student(student1)
+    school.add_student(student2)
+    school.add_teacher(teacher1)
+    school.add_teacher(teacher2)
+
+    # Introduce students and teachers
+    student1.introduce()
+    student2.introduce()
+    teacher1.introduce()
+    teacher2.introduce()
+
+    # Perform student and teacher-specific actions
+    student1.study("Math")
+    student2.study("Science")
+    teacher1.teach("History")
+    teacher2.teach("English")
+
+    # Display the list of students and teachers in the school
+    print("\nSchool Information:")
+    school.show_students()
+    school.show_teachers()
+
+
+# Class 'Person':
+
+# It serves as the base class with an __init__ method to initialize name and age.
+# It defines an introduce method to introduce a person.
+# Inheritance:
+
+# 'Student' and 'Teacher' classes inherit from the 'Person' class.
+# They extend the base class by adding specific attributes and methods.
+# Composition:
+
+# The 'School' class is composed of students and teachers.
+# It has methods to add students and teachers, as well as to display the lists of students and teachers.
+# Main Program:
+
+# Instances of 'Student' and 'Teacher' classes are created.
+# An instance of the 'School' class is created.
+# Students and teachers are added to the school.
+# Various methods are called to introduce, study, and teach.
+# The lists of students and teachers in the school are displayed.

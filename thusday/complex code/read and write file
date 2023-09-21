@@ -1,0 +1,77 @@
+# Writing text to a file
+import json
+import csv
+with open("text_file.txt", "w") as text_file:
+    text_file.write("Hello, World!\n")
+    text_file.write("This is a complex program for file operations.\n")
+    text_file.write("Python is awesome!")
+
+# Reading text from a file
+with open("text_file.txt", "r") as text_file:
+    print("Contents of 'text_file.txt':")
+    print(text_file.read())
+
+# Writing multiple lines to a file using a list
+lines_to_write = ["Line 1\n", "Line 2\n", "Line 3\n"]
+with open("multi_line_file.txt", "w") as multi_line_file:
+    multi_line_file.writelines(lines_to_write)
+
+# Reading multiple lines from a file into a list
+lines_read = []
+with open("multi_line_file.txt", "r") as multi_line_file:
+    lines_read = multi_line_file.readlines()
+
+print("\nContents of 'multi_line_file.txt':")
+for line in lines_read:
+    print(line, end="")
+
+# Appending text to an existing file
+with open("text_file.txt", "a") as text_file:
+    text_file.write("\nAppending some more text.")
+
+# Reading binary data from a file
+binary_data = b'\x48\x65\x6C\x6C\x6F\x2C\x20\x57\x6F\x72\x6C\x64\x21'
+with open("binary_file.bin", "wb") as binary_file:
+    binary_file.write(binary_data)
+
+# Reading binary data from a file
+with open("binary_file.bin", "rb") as binary_file:
+    binary_data_read = binary_file.read()
+
+print("\nBinary data from 'binary_file.bin':", binary_data_read)
+
+# Writing and reading CSV data using the csv module
+
+csv_data = [
+    ["Name", "Age"],
+    ["Alice", 30],
+    ["Bob", 25],
+    ["Charlie", 35]
+]
+
+with open("csv_file.csv", "w", newline="") as csv_file:
+    csv_writer = csv.writer(csv_file)
+    csv_writer.writerows(csv_data)
+
+with open("csv_file.csv", "r") as csv_file:
+    csv_reader = csv.reader(csv_file)
+    print("\nCSV Data:")
+    for row in csv_reader:
+        print(row)
+
+# Writing and reading JSON data
+
+data_to_write = {
+    "name": "Alice",
+    "age": 30,
+    "grades": [95, 88, 92]
+}
+
+with open("json_file.json", "w") as json_file:
+    json.dump(data_to_write, json_file)
+
+with open("json_file.json", "r") as json_file:
+    data_read = json.load(json_file)
+
+print("\nJSON Data:")
+print(data_read)

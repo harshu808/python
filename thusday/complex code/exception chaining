@@ -1,0 +1,43 @@
+# Custom exception class
+class MyCustomException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+
+# Function to trigger the first exception
+
+
+def trigger_exception():
+    try:
+        result = 10 / 0  # Trigger a ZeroDivisionError
+    except ZeroDivisionError as zde:
+        raise MyCustomException("Custom Exception triggered.") from zde
+
+# Function to demonstrate exception chaining
+
+
+def exception_chaining():
+    try:
+        trigger_exception()
+    except MyCustomException as mce:
+        print(f"Caught MyCustomException: {mce}")
+        # Access the original exception using __cause__
+        original_exception = mce.__cause__
+        if original_exception:
+            print(f"Original Exception: {original_exception}")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Exception Chaining Example:\n")
+
+    print("1. Exception Chaining:")
+    try:
+        exception_chaining()
+    except MyCustomException as mce:
+        print(f"Caught MyCustomException (outer): {mce}")
+
+
+# We define a custom exception class MyCustomException.
+# In the trigger_exception function, we intentionally trigger a ZeroDivisionError and raise a MyCustomException while preserving the original exception using the from keyword.
+# In the exception_chaining function, we catch MyCustomException and print both the caught exception and the original exception accessed using __cause__.
+# In the main program, we call exception_chaining and handle the exceptions appropriately.

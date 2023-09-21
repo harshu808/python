@@ -1,0 +1,69 @@
+# Custom exception class with notes
+class CustomExceptionWithNotes(Exception):
+    def __init__(self, message, notes):
+        super().__init__(message)
+        self.notes = notes
+
+# Function to raise a custom exception with notes
+
+
+def raise_custom_exception_with_notes():
+    try:
+        value = int(input("Enter a value: "))
+        if value < 0:
+            raise CustomExceptionWithNotes("Value cannot be negative.", [
+                                           "Note 1: Ensure a non-negative value.", "Note 2: Check the input."])
+    except CustomExceptionWithNotes as ce:
+        print(f"Caught CustomExceptionWithNotes: {ce}")
+        print("Notes:")
+        for note in ce.notes:
+            print(note)
+
+# Subclassing a built-in exception and adding notes
+
+
+class FileNotFoundErrorWithNotes(FileNotFoundError):
+    def __init__(self, filename, notes):
+        super().__init__(filename)
+        self.notes = notes
+
+# Function to raise a custom FileNotFoundError with notes
+
+
+def raise_custom_file_not_found_exception_with_notes():
+    try:
+        filename = input("Enter a filename: ")
+        with open(filename, "r") as file:
+            content = file.read()
+    except FileNotFoundError:
+        raise FileNotFoundErrorWithNotes(f"File '{filename}' not found.", [
+                                         "Note 1: Check the file path.", "Note 2: Verify file existence."])
+
+
+# Main program
+if __name__ == "__main__":
+    print("Enriching Exceptions with Notes Example:\n")
+
+    print("1. Custom Exception with Notes:")
+    raise_custom_exception_with_notes()
+
+    print("\n2. Custom FileNotFoundError with Notes:")
+    try:
+        raise_custom_file_not_found_exception_with_notes()
+    except FileNotFoundErrorWithNotes as fe:
+        print(f"Caught FileNotFoundErrorWithNotes: {fe}")
+        print("Notes:")
+        for note in fe.notes:
+            print(note)
+
+
+# Custom Exception with Notes:
+
+# We define the CustomExceptionWithNotes class, which inherits from the base Exception class and includes an additional notes attribute.
+# The raise_custom_exception_with_notes function raises this custom exception if the entered value is negative.
+# When the exception is caught, we print the exception message and the associated notes.
+# Custom FileNotFoundError with Notes:
+
+# We subclass the built-in FileNotFoundError and add an additional notes attribute to it.
+# The raise_custom_file_not_found_exception_with_notes function attempts to open a file and raises the custom FileNotFoundErrorWithNotes if the file is not found.
+# When the custom exception is caught, we print the exception message and the associated notes.

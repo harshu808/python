@@ -1,0 +1,94 @@
+# Define a sample class
+import os
+import math
+
+
+class SampleClass:
+    class_variable = "I'm a class variable"
+
+    def __init__(self):
+        self.instance_variable = "I'm an instance variable"
+
+    def instance_method(self):
+        print("I'm an instance method")
+
+    @classmethod
+    def class_method(cls):
+        print("I'm a class method")
+
+    @staticmethod
+    def static_method():
+        print("I'm a static method")
+
+
+# Create an instance of the SampleClass
+sample_instance = SampleClass()
+
+# Use the dir() function with the instance
+print("Attributes of the SampleClass instance:")
+attributes = dir(sample_instance)
+for attribute in attributes:
+    print(attribute)
+
+# Use the dir() function with the class
+print("\nAttributes of the SampleClass class:")
+class_attributes = dir(SampleClass)
+for attribute in class_attributes:
+    print(attribute)
+
+# Use the dir() function with built-in modules
+
+print("\nAttributes of the math module:")
+math_attributes = dir(math)
+for attribute in math_attributes:
+    print(attribute)
+
+# Use the dir() function with a string
+sample_string = "Hello, World!"
+
+print("\nAttributes of a string:")
+string_attributes = dir(sample_string)
+for attribute in string_attributes:
+    print(attribute)
+
+# Use the dir() function with a list
+sample_list = [1, 2, 3]
+
+print("\nAttributes of a list:")
+list_attributes = dir(sample_list)
+for attribute in list_attributes:
+    print(attribute)
+
+# Use the dir() function with a dictionary
+sample_dict = {"name": "Alice", "age": 30}
+
+print("\nAttributes of a dictionary:")
+dict_attributes = dir(sample_dict)
+for attribute in dict_attributes:
+    print(attribute)
+
+# Use the dir() function with a module
+
+print("\nAttributes of the os module:")
+os_attributes = dir(os)
+for attribute in os_attributes:
+    print(attribute)
+
+# Use the dir() function with a function
+
+
+def sample_function():
+    print("I'm a sample function")
+
+
+print("\nAttributes of a function:")
+function_attributes = dir(sample_function)
+for attribute in function_attributes:
+    print(attribute)
+
+
+# Define a sample class (SampleClass) with class variables, instance variables, instance methods, class methods, and static methods.
+# Create an instance of SampleClass and use the dir() function to list its attributes.
+# Use the dir() function to list attributes of the SampleClass itself (class-level attributes).
+# Use the dir() function to list attributes of built-in modules (math), strings, lists, dictionaries, and other data types.
+# Use the dir() function to list attributes of a built-in module (os) and a user-defined function (sample_function).

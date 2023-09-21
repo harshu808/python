@@ -1,0 +1,82 @@
+# Define variables
+name = "Alice"
+age = 30
+amount = 1234.56789
+grades = [95, 88, 92]
+student_info = {"name": "Bob", "age": 25}
+
+# Basic string formatting
+formatted_string = "Hello, {}!".format(name)
+print(formatted_string)
+
+# Using positional arguments
+formatted_age = "{} is {} years old.".format(name, age + 1)
+print(formatted_age)
+
+# Numeric formatting
+# Format as a floating-point number with 2 decimal places
+formatted_amount = "Amount: {:.2f}".format(amount)
+print(formatted_amount)
+
+# Formatting lists
+# Convert grades to strings and join them
+formatted_grades = "Grades: {}".format(', '.join(map(str, grades)))
+print(formatted_grades)
+
+# Using expressions and functions
+formatted_greeting = "Hello, {}!".format(name.upper())
+print(formatted_greeting)
+
+# Accessing dictionary values
+formatted_info = "Student: {name}, Age: {age}".format(**student_info)
+print(formatted_info)
+
+# Positional and keyword arguments together
+formatted_combined = "{0}, {1}, and {name}".format(
+    "Hello", "World", name="Python")
+print(formatted_combined)
+
+# Advanced formatting
+formatted_advanced = "Amount: {:.2f}, Hex: {}".format(amount, amount.hex())
+print(formatted_advanced)
+
+# Conditional expressions in format()
+is_adult = True
+status_message = "You are {}.".format("an adult" if is_adult else "a minor")
+print(status_message)
+
+# Using named placeholders
+formatted_named = "Name: {name}, Age: {age}".format(name=name, age=age)
+print(formatted_named)
+
+# Formatting using field names
+point = (3, 4)
+formatted_point = "Point: {0[0]}, {0[1]}".format(point)
+print(formatted_point)
+
+# Filling and aligning text
+formatted_aligned = "Aligned: {0:<10} | {1:^5} | {2:>5}".format(
+    "Name", "Age", "Grade")
+print(formatted_aligned)
+
+# Using format specifiers
+formatted_specifier = "Formatted: {:>10} | {:^10} | {:.2f}".format(
+    "Alice", 30, 95.5)
+print(formatted_specifier)
+
+# String alignment with format()
+aligned_text = "{:^20}".format("Centered Text")
+print(aligned_text)
+
+# String formatting with format_map()
+template = "My name is {name} and I am {age} years old."
+formatted_map = template.format_map({"name": "David", "age": 28})
+print(formatted_map)
+
+# Multiline string formatting with format()
+multiline_template = """\
+Name: {name}
+Age: {age}
+"""
+formatted_multiline = multiline_template.format(name="Eve", age=35)
+print(formatted_multiline)

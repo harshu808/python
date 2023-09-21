@@ -1,0 +1,84 @@
+# Create a list of numbers
+from itertools import filterfalse
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Loop through the list using a for loop
+print("Using a for loop:")
+for num in numbers:
+    if num % 2 == 0:
+        print(f"Even: {num}")
+    else:
+        print(f"Odd: {num}")
+
+# Loop through the list using a list comprehension
+print("\nUsing a list comprehension:")
+even_numbers = [num for num in numbers if num % 2 == 0]
+print("Even numbers:", even_numbers)
+
+# Loop through the list using a while loop
+print("\nUsing a while loop:")
+i = 0
+while i < len(numbers):
+    print(numbers[i])
+    i += 1
+
+# Loop through a dictionary
+student_grades = {'Alice': 92, 'Bob': 85, 'Charlie': 78, 'David': 94}
+
+print("\nLooping through a dictionary:")
+for name, grade in student_grades.items():
+    print(f"{name}: {grade}")
+
+# Loop through a dictionary using dictionary comprehension
+passed_students = {name: grade for name,
+                   grade in student_grades.items() if grade >= 90}
+print("\nPassed students:", passed_students)
+
+# Loop through two lists in parallel using zip
+names = ['Alice', 'Bob', 'Charlie']
+ages = [25, 30, 22]
+
+print("\nLooping through two lists in parallel:")
+for name, age in zip(names, ages):
+    print(f"Name: {name}, Age: {age}")
+
+# Loop through a range of numbers
+print("\nLooping through a range:")
+for i in range(1, 6):
+    print(i)
+
+# Loop through a list with index using enumerate
+fruits = ['apple', 'banana', 'cherry']
+
+print("\nLooping through a list with index:")
+for index, fruit in enumerate(fruits):
+    print(f"Index: {index}, Fruit: {fruit}")
+
+# Loop through a string
+text = "Hello, World!"
+
+print("\nLooping through a string:")
+for char in text:
+    print(char)
+
+# Loop with an else block (executed when the loop completes without a 'break')
+print("\nLoop with an else block:")
+for num in numbers:
+    if num == 8:
+        print("Number 8 found.")
+        break
+else:
+    print("Number 8 not found.")
+
+# Loop through a list with a nested loop
+print("\nLooping with nested loops:")
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+for row in matrix:
+    for num in row:
+        print(num, end=' ')
+    print()
+
+# Loop through a list with a condition using itertools.filterfalse
+odd_numbers = filterfalse(lambda x: x % 2 == 0, numbers)
+print("\nOdd numbers using filterfalse:", list(odd_numbers))

@@ -1,0 +1,106 @@
+# Creating a Custom Module
+# Create a file named mymodule.py with the following contents:
+"""
+# mymodule.py
+
+def greet(name):
+    return f"Hello, {name}!"
+
+def add(a, b):
+    return a + b
+"""
+
+# Importing Modules
+import scriptmodule
+import mymodule3
+from mypackage import mymodule2
+import mymodule as custom
+import sys
+from math import *
+import mymodule as mm
+from mymodule import add
+import math
+import mymodule
+
+# Using a Built-in Module
+print("Using a built-in module:")
+radius = 5
+area = math.pi * math.pow(radius, 2)
+print(f"Area of a circle with radius {radius}: {area:.2f}")
+
+# Using a Custom Module
+print("\nUsing a custom module:")
+name = "Alice"
+greeting = mymodule.greet(name)
+print(greeting)
+
+# Importing Specific Functions/Variables from a Module
+
+result = add(3, 4)
+print(f"3 + 4 = {result}")
+
+# Renaming Modules and Functions
+result = mm.add(5, 6)
+print(f"5 + 6 = {result}")
+
+# Importing All Names from a Module
+
+# Using All Names from math Module
+print("\nUsing all names from math module:")
+print(f"Square root of 16: {sqrt(16)}")
+print(f"Logarithm of 1000 (base 10): {log10(1000)}")
+
+# Listing Module Search Paths
+
+print("\nListing module search paths:")
+for path in sys.path:
+    print(path)
+
+# Creating an Alias for a Module
+
+# Using the Alias
+result = custom.add(7, 8)
+print(f"7 + 8 = {result}")
+
+# Creating and Using Packages
+# Create a folder named mypackage with two files: __init__.py and mymodule2.py
+# __init__.py can be empty.
+# mymodule2.py contents:
+"""
+def multiply(a, b):
+    return a * b
+"""
+
+# Using the Package
+
+product = mymodule2.multiply(4, 5)
+print(f"4 * 5 = {product}")
+
+# Locating Module Information
+print("\nLocating module information:")
+
+print(f"Name of the module: {mymodule.__name__}")
+print(f"Documentation: {mymodule.__doc__}")
+print(f"File location: {mymodule.__file__}")
+
+# Creating and Using Module-Level Variables
+
+print(f"Module-level variable: {mymodule3.my_variable}")
+
+# Executing Modules as Scripts
+# Create a file named scriptmodule.py with the following contents:
+"""
+def say_hello(name):
+    print(f"Hello, {name}!")
+
+if __name__ == "__main__":
+    name = "Alice"
+    say_hello(name)
+"""
+
+# Running scriptmodule.py as a script
+# python scriptmodule.py
+
+# Using the 'if __name__ == "__main__":' Guard
+
+# This won't print "Hello, Alice!" because __name__ is not "__main__" when imported

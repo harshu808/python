@@ -1,0 +1,44 @@
+# Custom context manager class
+class CustomContextManager:
+    def __enter__(self):
+        print("Entering the context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting the context")
+        if exc_type is not None:
+            print(f"Exception Type: {exc_type}")
+            print(f"Exception Value: {exc_value}")
+            print(f"Exception Traceback: {traceback}")
+        return False  # Propagate exceptions
+
+# Function to demonstrate predefined clean-up actions with context managers
+
+
+def use_custom_context_manager():
+    with CustomContextManager() as cm:
+        print("Inside the context")
+        # Simulate an exception
+        # Uncomment the next line to see how the context manager handles exceptions
+        # raise ValueError("An error occurred")
+
+    print("Outside the context")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Predefined Clean-up Actions Example:\n")
+
+    print("1. Using a Custom Context Manager:")
+    use_custom_context_manager()
+
+
+# We define the CustomContextManager class, which serves as a custom context manager. It has __enter__ and __exit__ methods.
+
+# The __enter__ method is called when entering the context, and it returns the context manager object itself.
+# The __exit__ method is called when exiting the context and takes parameters for exception type, value, and traceback.
+# The use_custom_context_manager function demonstrates how to use the custom context manager:
+
+# It enters the context using a with statement, which automatically calls the __enter__ method.
+# Inside the context, we print a message and simulate an exception (commented out by default).
+# The __exit__ method is called when exiting the context, and it prints messages about the exit process and any exceptions that occurred.

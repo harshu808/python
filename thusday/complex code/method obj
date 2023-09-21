@@ -1,0 +1,72 @@
+# Class definition 'Person'
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, and I'm {self.age} years old.")
+
+# Inheritance: 'Student' class inherits from 'Person'
+
+
+class Student(Person):
+    def __init__(self, name, age, student_id):
+        super().__init__(name, age)
+        self.student_id = student_id
+
+    def study(self, subject):
+        print(f"{self.name} is studying {subject}.")
+
+
+# Create instances of 'Student' class
+student1 = Student("Alice", 18, "S12345")
+student2 = Student("Bob", 19, "S67890")
+
+# Demonstrate method objects
+print("Method Objects Example:\n")
+
+# Access method objects and call methods
+print("Method Objects and Method Calls:")
+introduce_method = student1.introduce  # Get the 'introduce' method object
+study_method = student2.study  # Get the 'study' method object
+
+# Call the 'introduce' method using its method object
+print("Using Method Object:")
+introduce_method()
+
+# Call the 'study' method using its method object
+print("\nUsing Method Object:")
+study_method("Math")
+
+# Verify the method object types
+print(f"\nType of 'introduce_method': {type(introduce_method)}")
+print(f"Type of 'study_method': {type(study_method)}")
+
+# Check if the method objects are bound methods
+print(
+    f"\nIs 'introduce_method' a bound method? {hasattr(introduce_method, '__self__')}")
+print(f"Is 'study_method' a bound method? {hasattr(study_method, '__self__')}")
+
+
+# Class 'Person':
+
+# We define the 'Person' class with an __init__ method to initialize name and age.
+# It also defines an introduce method to introduce a person.
+# Inheritance:
+
+# 'Student' class inherits from the 'Person' class.
+# 'Student' class adds a specific method, study, to describe a student's action.
+# Method Objects:
+
+# We create instances of the 'Student' class (student1 and student2).
+# We access method objects (introduce_method and study_method) by referencing the methods without calling them.
+# Calling Methods Using Method Objects:
+
+# We call the 'introduce' and 'study' methods using their method objects.
+# Checking Method Object Types:
+
+# We verify the types of the method objects to confirm they are indeed method objects.
+# Checking if Method Objects Are Bound Methods:
+
+# We check if the method objects are bound methods (associated with instances) using the hasattr function.

@@ -1,0 +1,113 @@
+# Create a list of tuples representing people's information
+from dataclasses import dataclass
+from collections import namedtuple
+people_info = [
+    ('Alice', 30, 'New York'),
+    ('Bob', 25, 'San Francisco'),
+    ('Charlie', 35, 'Los Angeles'),
+    ('David', 28, 'Chicago'),
+    ('Eve', 40, 'Seattle')
+]
+
+# Sort the list of tuples by age (ascending)
+sorted_people_info = sorted(people_info, key=lambda x: x[1])
+
+# Create a list of names using a list comprehension
+names = [person[0] for person in sorted_people_info]
+
+# Create a dictionary mapping names to ages using a dictionary comprehension
+name_to_age = {person[0]: person[1] for person in people_info}
+
+# Create a set of cities using a set comprehension
+cities = {person[2] for person in people_info}
+
+# Access the nth element in a tuple using indexing
+third_person = people_info[2]
+
+# Unpack elements from a tuple
+name, age, city = third_person
+
+# Iterate over the list of tuples and print information
+for person in people_info:
+    print(f"Name: {person[0]}, Age: {person[1]}, City: {person[2]}")
+
+# Find the average age of people
+total_age = sum(age for name, age, city in people_info)
+average_age = total_age / len(people_info)
+
+# Find the youngest and oldest person
+youngest_person = min(people_info, key=lambda x: x[1])
+oldest_person = max(people_info, key=lambda x: x[1])
+
+# Count the number of people in a specific city
+seattle_count = sum(1 for name, age, city in people_info if city == 'Seattle')
+
+# Check if a specific person is in the list of tuples
+is_person_in_list = ('Alice', 30, 'New York') in people_info
+
+# Concatenate two tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+concatenated_tuple = tuple1 + tuple2
+
+# Create a named tuple
+Person = namedtuple('Person', ['name', 'age', 'city'])
+person1 = Person(name='Alice', age=30, city='New York')
+
+# Access named tuple elements by name
+person1_name = person1.name
+person1_age = person1.age
+person1_city = person1.city
+
+# Create a tuple with named elements (Python 3.6+)
+person2 = (name := 'Bob', age := 25, city := 'San Francisco')
+
+# Create a list of tuples and sort by multiple criteria (age and name)
+people_info_multi_sort = [
+    ('Alice', 30, 'New York'),
+    ('Bob', 25, 'San Francisco'),
+    ('Alice', 25, 'Los Angeles'),
+    ('Charlie', 35, 'Los Angeles'),
+    ('David', 28, 'Chicago'),
+    ('Eve', 40, 'Seattle')
+]
+
+sorted_people_info_multi_sort = sorted(
+    people_info_multi_sort, key=lambda x: (x[1], x[0]))
+
+# Create a tuple with a variable number of elements using extended unpacking
+first, *rest = 1, 2, 3, 4, 5
+
+# Create a tuple with named elements and defaults (Python 3.10+)
+
+
+@dataclass
+class Person:
+    name: str
+    age: int = 30
+    city: str = 'New York'
+
+
+person3 = Person(name='Alice', city='San Francisco')
+
+# Create a list of tuples and filter based on a condition using a list comprehension
+people_info_filtered = [
+    ('Alice', 30, 'New York'),
+    ('Bob', 25, 'San Francisco'),
+    ('Charlie', 35, 'Los Angeles'),
+    ('David', 28, 'Chicago'),
+    ('Eve', 40, 'Seattle')
+]
+
+filtered_people_info = [
+    person for person in people_info_filtered if person[1] >= 30]
+
+# Create a tuple with elements from multiple sources (Python 3.10+)
+tuple_from_multiple_sources = (*tuple1, *tuple2)
+
+# Use a generator expression to create a tuple
+tuple_from_generator_expr = tuple(
+    x for x in range(10) if x % 2 == 0)  # (0, 2, 4, 6, 8)
+
+# Create a tuple of tuples with variable lengths
+tuple_of_tuples = ((1,), (2, 3), (4, 5, 6))

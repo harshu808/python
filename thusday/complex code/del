@@ -1,0 +1,96 @@
+# Define a complex data structure
+from my_module import my_variable
+import my_module
+data = {
+    'name': 'John',
+    'age': 30,
+    'languages': ['Python', 'JavaScript', 'Java'],
+    'scores': {
+        'math': 90,
+        'science': 85,
+        'history': 75
+    }
+}
+
+# Delete an item from a list
+del data['languages'][1]  # Removes 'JavaScript' from the list
+
+# Delete a dictionary key-value pair
+del data['scores']['history']  # Removes 'history': 75
+
+# Delete an entire dictionary
+del data['scores']  # Removes the 'scores' dictionary
+
+# Delete a variable
+x = 10
+del x  # Deletes the variable 'x'
+
+# Delete an attribute of an object
+
+
+class MyClass:
+    def __init__(self):
+        self.value = 42
+
+
+my_instance = MyClass()
+del my_instance.value  # Deletes the 'value' attribute of the object
+
+# Delete a slice of a list
+my_list = [1, 2, 3, 4, 5]
+del my_list[1:4]  # Removes elements at indices 1, 2, and 3
+
+# Delete a range of elements in a list
+my_list = [1, 2, 3, 4, 5]
+del my_list[1:4]  # Removes elements at indices 1, 2, and 3
+
+# Delete an entire list
+my_list = [1, 2, 3, 4, 5]
+del my_list  # Deletes the entire list
+
+# Delete a slice of a string
+my_string = "Hello, World!"
+del my_string[7:12]  # Removes 'World' from the string
+
+# Delete a range of characters in a string
+my_string = "Hello, World!"
+del my_string[7:12]  # Removes 'World' from the string
+
+# Delete an entire string (not possible directly, as strings are immutable)
+
+# Delete a module or variable from a module (not recommended, can lead to unexpected behavior)
+del my_module  # Deletes the entire module
+
+# Delete a specific variable from a module (not recommended, can lead to unexpected behavior)
+del my_variable  # Deletes the variable from the module
+
+# Delete a slice of a tuple (not possible, as tuples are immutable)
+
+# Delete an element from a set
+my_set = {1, 2, 3, 4, 5}
+my_set.remove(3)  # Removes the element 3 from the set
+
+# Delete an entire set
+my_set = {1, 2, 3, 4, 5}
+del my_set  # Deletes the entire set
+
+# Delete a slice of a bytearray
+my_bytearray = bytearray(b'Hello, World!')
+del my_bytearray[7:12]  # Removes 'World' from the bytearray
+
+# Delete a range of bytes in a bytearray
+my_bytearray = bytearray(b'Hello, World!')
+del my_bytearray[7:12]  # Removes 'World' from the bytearray
+
+# Delete an entire bytearray
+my_bytearray = bytearray(b'Hello, World!')
+del my_bytearray  # Deletes the entire bytearray
+
+# Delete an element from a list using a condition
+my_list = [1, 2, 3, 4, 5]
+my_list = [x for x in my_list if x != 3]  # Removes the element 3 from the list
+
+# Delete multiple elements from a list using a condition
+my_list = [1, 2, 3, 4, 5]
+# Removes the elements 2 and 4 from the list
+my_list = [x for x in my_list if x not in (2, 4)]

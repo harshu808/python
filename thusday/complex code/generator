@@ -1,0 +1,65 @@
+# Define a generator function 'countdown_generator'
+def countdown_generator(start):
+    while start >= 0:
+        yield start
+        start -= 1
+
+
+# Create a generator object from the generator function
+countdown = countdown_generator(5)
+
+# Demonstrate using the generator
+print("Generator Example:\n")
+
+# Using a for loop to iterate through the generator
+print("Countdown:")
+for value in countdown:
+    print(value)
+
+# Define a generator function 'fibonacci_generator'
+
+
+def fibonacci_generator():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+
+# Create a generator object from the generator function
+fibonacci = fibonacci_generator()
+
+# Generate and print the first 10 Fibonacci numbers
+print("\nFibonacci Sequence:")
+for _ in range(10):
+    print(next(fibonacci), end=" ")
+
+# Create a generator expression to find even numbers in a range
+even_numbers = (x for x in range(1, 21) if x % 2 == 0)
+
+# Using a for loop to iterate through the generator expression
+print("\n\nEven Numbers:")
+for number in even_numbers:
+    print(number, end=" ")
+
+
+
+
+# Generator Function 'countdown_generator':
+
+# We define a generator function named 'countdown_generator' that yields values while counting down from a given start value.
+# Creating and Using the Generator:
+
+# We create a generator object from the 'countdown_generator' function and use it in a for loop.
+# Generator Function 'fibonacci_generator':
+
+# We define a generator function named 'fibonacci_generator' that generates Fibonacci numbers indefinitely.
+# Creating and Using the Fibonacci Generator:
+
+# We create a generator object from the 'fibonacci_generator' function and generate and print the first 10 Fibonacci numbers.
+# Generator Expression for Even Numbers:
+
+# We create a generator expression to find even numbers in a range.
+# Using a Generator Expression:
+
+# We use a for loop to iterate through the generator expression and print even numbers.

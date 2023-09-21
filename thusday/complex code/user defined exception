@@ -1,0 +1,61 @@
+# Custom exception class for a specific error
+class InsufficientFundsError(Exception):
+    def __init__(self, balance, amount):
+        self.balance = balance
+        self.amount = amount
+        super().__init__(
+            f"Insufficient funds: Balance is {balance}, but tried to withdraw {amount}.")
+
+# Custom exception class with a default message
+
+
+class CustomError(Exception):
+    pass
+
+# Function to simulate a bank account
+
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            raise InsufficientFundsError(self.balance, amount)
+
+# Function to demonstrate raising a custom exception
+
+
+def raise_custom_exception():
+    try:
+        raise CustomError("This is a custom exception.")
+    except CustomError as ce:
+        print(f"Caught CustomError: {ce}")
+
+
+# Main program
+if __name__ == "__main__":
+    print("User-defined Exceptions Example:\n")
+
+    print("1. Using Custom Exception Classes:")
+    try:
+        account = BankAccount(1000)
+        account.withdraw(1500)
+    except InsufficientFundsError as ife:
+        print(f"Caught InsufficientFundsError: {ife}")
+
+    print("\n2. Raising and Catching Custom Exceptions:")
+    raise_custom_exception()
+
+
+# We define a custom exception class InsufficientFundsError with a constructor that takes the balance and the amount of withdrawal as parameters.
+
+# We create another custom exception class CustomError with a default message.
+
+# We simulate a bank account using the BankAccount class, and the withdraw method raises an InsufficientFundsError if the withdrawal amount exceeds the balance.
+
+# We demonstrate raising and catching custom exceptions with the raise_custom_exception function.
+
+# In the main program, we handle InsufficientFundsError when withdrawing from a bank account and catch the CustomError exception.

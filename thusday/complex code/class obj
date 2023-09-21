@@ -1,0 +1,85 @@
+# Base class 'Person'
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, and I'm {self.age} years old.")
+
+# Inheritance: 'Student' class inherits from 'Person'
+
+
+class Student(Person):
+    def __init__(self, name, age, student_id):
+        super().__init__(name, age)
+        self.student_id = student_id
+
+    def study(self, subject):
+        print(f"{self.name} is studying {subject}.")
+
+# Inheritance: 'Teacher' class inherits from 'Person'
+
+
+class Teacher(Person):
+    def __init__(self, name, age, employee_id):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+
+    def teach(self, subject):
+        print(f"{self.name} is teaching {subject}.")
+
+
+# Create instances of 'Student' and 'Teacher' classes
+student1 = Student("Alice", 18, "S12345")
+student2 = Student("Bob", 19, "S67890")
+teacher1 = Teacher("Mr. Smith", 35, "T123")
+teacher2 = Teacher("Ms. Johnson", 28, "T456")
+
+# Demonstrate class objects
+print("Class Objects Example:\n")
+
+# Print class objects
+print("Class Objects:")
+print(f"Person class object: {Person}")
+print(f"Student class object: {Student}")
+print(f"Teacher class object: {Teacher}")
+
+# Create instances using class objects
+print("\nCreating Instances using Class Objects:")
+
+# Create a new instance of 'Student' class
+new_student = Student.__new__(Student)
+new_student.__init__("Charlie", 20, "S78901")  # Initialize the instance
+# Create a new instance of 'Teacher' class
+new_teacher = Teacher.__new__(Teacher)
+new_teacher.__init__("Mrs. Davis", 40, "T789")  # Initialize the instance
+
+# Introduce the created instances
+new_student.introduce()
+new_teacher.introduce()
+
+# Check the type of the created instances
+print(f"\nType of new_student: {type(new_student)}")
+print(f"Type of new_teacher: {type(new_teacher)}")
+
+# Verify the class of the created instances
+print(
+    f"\nIs new_student an instance of 'Student' class? {isinstance(new_student, Student)}")
+print(
+    f"Is new_teacher an instance of 'Teacher' class? {isinstance(new_teacher, Teacher)}")
+
+
+# Class 'Person':
+
+# It serves as the base class with an __init__ method to initialize name and age.
+# It defines an introduce method to introduce a person.
+# Inheritance:
+
+# 'Student' and 'Teacher' classes inherit from the 'Person' class.
+# They extend the base class by adding specific attributes and methods.
+# Class Objects:
+
+# We print class objects of 'Person,' 'Student,' and 'Teacher' classes.
+# We create instances using class objects and initialize them manually.
+# We introduce the created instances and check their types and class membership.

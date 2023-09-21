@@ -1,0 +1,56 @@
+# Define variables
+name = "Alice"
+age = 30
+amount = 1234.56789
+grades = [95, 88, 92]
+student_info = {"name": "Bob", "age": 25}
+
+# Basic string formatting
+formatted_string = "Hello, %s!" % name
+print(formatted_string)
+
+# Using placeholders and positional arguments
+formatted_age = "%s is %d years old." % (name, age + 1)
+print(formatted_age)
+
+# Numeric formatting with placeholders
+# Format as a floating-point number with 2 decimal places
+formatted_amount = "Amount: %.2f" % amount
+print(formatted_amount)
+
+# Formatting lists with placeholders
+# Convert grades to strings and join them
+formatted_grades = "Grades: %s" % ', '.join(map(str, grades))
+print(formatted_grades)
+
+# Using expressions and functions
+formatted_greeting = "Hello, %s!" % name.upper()
+print(formatted_greeting)
+
+# Accessing dictionary values with placeholders
+formatted_info = "Student: %s, Age: %d" % (
+    student_info["name"], student_info["age"])
+print(formatted_info)
+
+# Advanced formatting with placeholders
+formatted_advanced = "Amount: %.2f, Hex: %s" % (amount, amount.hex())
+print(formatted_advanced)
+
+# Conditional expressions in old-style formatting
+is_adult = True
+status_message = "You are %s." % ("an adult" if is_adult else "a minor")
+print(status_message)
+
+# String alignment and padding with old-style formatting
+name = "Name"
+age = "Age"
+grade = "Grade"
+formatted_aligned = "Aligned: %-10s | %5s | %5s" % (name, age, grade)
+print(formatted_aligned)
+
+# Manual multiline string formatting with placeholders
+multiline_string = (
+    "Name: %s\n"
+    "Age: %d\n"
+) % (name, age)
+print(multiline_string)

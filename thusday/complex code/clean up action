@@ -1,0 +1,94 @@
+# Function to demonstrate clean-up actions with 'finally'
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        print(f"Result: {result}")
+    except ZeroDivisionError:
+        print("Division by zero is not allowed.")
+    finally:
+        print("Clean-up: Division operation completed.")
+
+# Function to demonstrate clean-up actions with file handling
+
+
+def read_file(file_name):
+    try:
+        with open(file_name, "r") as file:
+            content = file.read()
+            print("File Content:")
+            print(content)
+    except FileNotFoundError:
+        print(f"File '{file_name}' not found.")
+    finally:
+        print(f"Clean-up: File '{file_name}' operation completed.")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Clean-up Actions Example:\n")
+
+    print("1. Clean-up with 'finally' in Division:")
+    divide_numbers(10, 2)
+    divide_numbers(10, 0)
+
+    print("\n2. Clean-up with 'finally' in File Handling:")
+    read_file("example_file.txt")
+    read_file("nonexistent_file.txt")
+
+
+Defining clean-up actions in Python is important to ensure that certain tasks are executed, whether an exception occurs or not. You can use the try, except, finally blocks to specify clean-up code. Here's a complex program that demonstrates how to define clean-up actions:
+
+python
+Copy code
+# Function to demonstrate clean-up actions with 'finally'
+
+
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        print(f"Result: {result}")
+    except ZeroDivisionError:
+        print("Division by zero is not allowed.")
+    finally:
+        print("Clean-up: Division operation completed.")
+
+# Function to demonstrate clean-up actions with file handling
+
+
+def read_file(file_name):
+    try:
+        with open(file_name, "r") as file:
+            content = file.read()
+            print("File Content:")
+            print(content)
+    except FileNotFoundError:
+        print(f"File '{file_name}' not found.")
+    finally:
+        print(f"Clean-up: File '{file_name}' operation completed.")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Clean-up Actions Example:\n")
+
+    print("1. Clean-up with 'finally' in Division:")
+    divide_numbers(10, 2)
+    divide_numbers(10, 0)
+
+    print("\n2. Clean-up with 'finally' in File Handling:")
+    read_file("example_file.txt")
+    read_file("nonexistent_file.txt")
+
+
+# In this complex program, we demonstrate how to define clean-up actions in two scenarios:
+
+# Clean-up with 'finally' in Division:
+
+# We define the divide_numbers function, which performs division and handles the ZeroDivisionError if it occurs.
+# Regardless of whether an exception is raised, the finally block ensures that the clean-up code is executed.
+# We call divide_numbers with valid and invalid division scenarios to see how clean-up actions work.
+# Clean-up with 'finally' in File Handling:
+
+# We define the read_file function, which reads the content of a file and handles the FileNotFoundError if the file does not exist.
+# The finally block ensures that the clean-up code is executed, even if an exception occurs or not.
+# We call read_file with both an existing file and a non-existent file to observe the clean-up actions.

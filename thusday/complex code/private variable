@@ -1,0 +1,61 @@
+# Class definition 'Student'
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age  # Private instance variable
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, and I'm {self.__age} years old.")
+
+    def __private_method(self):  # Private instance method
+        print("This is a private method.")
+
+
+# Create an instance of 'Student' class
+student = Student("Alice", 20)
+
+# Demonstrate private variables and methods
+print("Private Variables and Methods Example:\n")
+
+# Accessing public variables and methods
+print("Accessing Public Variables and Methods:")
+print(f"Student name: {student.name}")
+student.introduce()
+
+# Attempting to access private variable (raises an error)
+try:
+    print(f"Student age: {student.__age}")  # Raises an error
+except AttributeError as e:
+    print(f"Error: {e}")
+
+# Attempting to call private method (raises an error)
+try:
+    student.__private_method()  # Raises an error
+except AttributeError as e:
+    print(f"Error: {e}")
+
+# Accessing private variable indirectly (not recommended)
+print("\nAccessing Private Variable Indirectly (Not Recommended):")
+print(f"Student age (indirect): {student._Student__age}")
+
+# Accessing private method indirectly (not recommended)
+print("\nAccessing Private Method Indirectly (Not Recommended):")
+student._Student__private_method()
+
+
+# Class 'Student':
+
+# We define the 'Student' class with a private instance variable (__age) and a private instance method (__private_method).
+# Public instance variables and methods are also defined.
+# Accessing Public Variables and Methods:
+
+# We demonstrate how to access public variables (name) and methods (introduce) directly.
+# Attempting to Access Private Variables and Methods:
+
+# We attempt to access the private variable (__age) and private method (__private_method) directly, which raises AttributeError exceptions.
+# Accessing Private Variables and Methods Indirectly (Not Recommended):
+
+# We show how to access private members indirectly using name mangling. This is not recommended, as it violates the principle of encapsulation.
+# Accessing Private Method Indirectly:
+
+# We call the private method (__private_method) indirectly using name mangling.

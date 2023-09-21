@@ -1,0 +1,98 @@
+# Creating a new text file and writing data
+import shutil
+with open("file_methods_example.txt", "w") as file:
+    file.write("Hello, World!\n")
+    file.write("This is a complex program for file methods.\n")
+    file.write("Python is awesome!")
+
+# Opening an existing file in read mode
+with open("file_methods_example.txt", "r") as file:
+    # Read the entire file
+    content = file.read()
+    print("File Content:")
+    print(content)
+
+    # Reset the file pointer to the beginning
+    file.seek(0)
+
+    # Read one line at a time
+    print("\nLines:")
+    for line in file:
+        print(line.strip())
+
+    # Read a specific number of characters
+    file.seek(0)  # Reset the file pointer
+    partial_content = file.read(15)
+    print("\nPartial Content (first 15 characters):", partial_content)
+
+# Appending data to an existing file
+with open("file_methods_example.txt", "a") as file:
+    file.write("\nAppending some more text.")
+
+# Checking file existence
+import os
+
+file_path = "file_methods_example.txt"
+if os.path.exists(file_path):
+    print(f"\n'{file_path}' exists.")
+
+# Renaming a file
+new_file_path = "renamed_file.txt"
+os.rename(file_path, new_file_path)
+print(f"Renamed '{file_path}' to '{new_file_path}'.")
+
+# Deleting a file
+os.remove(new_file_path)
+print(f"Deleted '{new_file_path}'.")
+
+# Checking file existence after deletion
+if not os.path.exists(new_file_path):
+    print(f"'{new_file_path}' does not exist.")
+
+# Copying a file
+
+original_file_path = "original_file.txt"
+copied_file_path = "copied_file.txt"
+
+with open(original_file_path, "w") as file:
+    file.write("This is the original file.")
+
+shutil.copy(original_file_path, copied_file_path)
+print(f"Copied '{original_file_path}' to '{copied_file_path}'.")
+
+# Closing a file manually
+file = open("manual_close.txt", "w")
+file.write("Manually closing the file.")
+file.close()
+
+# Checking if a file is closed
+print(f"Is the file closed? {file.closed}")
+
+# Reading file in binary mode
+with open("binary_file.bin", "wb") as binary_file:
+    binary_file.write(b"Binary data example")
+
+with open("binary_file.bin", "rb") as binary_file:
+    binary_data = binary_file.read()
+    print(f"\nBinary Data: {binary_data}")
+
+# Truncating a file
+with open("truncated_file.txt", "w") as file:
+    file.write("This will be truncated.")
+
+with open("truncated_file.txt", "r+") as file:
+    file.truncate(10)  # Truncate to the first 10 characters
+    truncated_content = file.read()
+    print(f"\nTruncated Content: {truncated_content}")
+
+
+# Writing data to a new text file.
+# Reading data from an existing text file using methods like read(), seek(), and iterating through lines.
+# Appending data to an existing file.
+# Checking file existence with os.path.exists().
+# Renaming and deleting files with os.rename() and os.remove().
+# Copying files with shutil.copy().
+# Manually closing a file with file.close().
+# Checking if a file is closed with file.closed.
+# Reading and writing binary data using binary mode ('wb' and 'rb').
+# Truncating a file with file.truncate().

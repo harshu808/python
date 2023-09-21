@@ -1,0 +1,69 @@
+# Custom exception class
+class MyCustomException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+
+# Function to demonstrate raising exceptions
+
+
+def raise_exceptions():
+    try:
+        # Raise a built-in exception (ValueError)
+        raise ValueError("This is a ValueError.")
+
+    except ValueError as ve:
+        print(f"Caught ValueError: {ve}")
+
+    try:
+        # Raise a custom exception
+        raise MyCustomException("This is a custom exception.")
+
+    except MyCustomException as ce:
+        print(f"Caught MyCustomException: {ce}")
+
+# Function to demonstrate conditional raising of exceptions
+
+
+def conditional_raise_exception(value):
+    if value < 0:
+        raise ValueError("Value cannot be negative.")
+    elif value == 0:
+        raise ZeroDivisionError("Division by zero is not allowed.")
+    else:
+        print("Value is valid.")
+
+# Function to demonstrate exception chaining
+
+
+def exception_chaining():
+    try:
+        result = 10 / 0  # Trigger a ZeroDivisionError
+    except ZeroDivisionError as zde:
+        raise ValueError(
+            "Custom ValueError with ZeroDivisionError as the cause.") from zde
+
+
+# Main program
+if __name__ == "__main__":
+    print("Raising Exceptions Examples:\n")
+
+    print("1. Raise Exceptions:")
+    raise_exceptions()
+
+    print("\n2. Conditional Raise Exception:")
+    try:
+        conditional_raise_exception(-1)
+    except (ValueError, ZeroDivisionError) as e:
+        print(f"Exception: {e}")
+
+    print("\n3. Exception Chaining:")
+    try:
+        exception_chaining()
+    except ValueError as ve:
+        print(f"Exception Chaining: {ve}")
+
+
+# Defining a custom exception class (MyCustomException).
+# Demonstrating the explicit raising of exceptions using the raise statement, including both built-in exceptions (ValueError) and custom exceptions (MyCustomException).
+# Conditionally raising exceptions based on the input value.
+# Exception chaining, where one exception (ZeroDivisionError) is raised as a result of another exception (ValueError) with the from keyword.

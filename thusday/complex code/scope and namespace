@@ -1,0 +1,99 @@
+# Global variable in the global namespace
+global_var = "I am a global variable"
+
+# Function definition in the global namespace
+
+
+def global_function():
+    print("Executing global_function")
+
+# Function with a local variable
+
+
+def local_scope_example():
+    local_var = "I am a local variable"
+    print(local_var)
+
+# Function with access to a global variable
+
+
+def access_global_variable():
+    print("Inside access_global_variable:", global_var)
+
+# Nested function with a local and global variable
+
+
+def nested_scope_example():
+    local_var = "I am a local variable"
+    print("Inside nested_scope_example:", local_var)
+
+    def inner_function():
+        nonlocal local_var  # Access the local variable from the outer function
+        local_var = "I am a modified local variable"
+        global_var = "This will not affect the global variable"
+        print("Inside inner_function:", local_var)
+        print("Inside inner_function (global_var):", global_var)
+
+    inner_function()
+    print("Outside inner_function:", local_var)
+
+# Function to demonstrate the 'global' keyword
+
+
+def modify_global_variable():
+    global global_var  # Declare that we want to use the global variable
+    global_var = "Global variable modified inside a function"
+    print("Inside modify_global_variable:", global_var)
+
+
+# Main program
+if __name__ == "__main__":
+    print("Python Scopes and Namespaces Example:\n")
+
+    # Global scope
+    print("1. Global Scope:")
+    print(global_var)  # Access the global variable
+    global_function()  # Call the global function
+    print()
+
+    # Local scope
+    print("2. Local Scope:")
+    local_scope_example()
+    print()
+
+    # Accessing global variable inside a function
+    print("3. Accessing Global Variable:")
+    access_global_variable()
+    print()
+
+    # Nested scope
+    print("4. Nested Scope:")
+    nested_scope_example()
+    print()
+
+    # Modifying global variable inside a function
+    print("5. Modifying Global Variable:")
+    modify_global_variable()
+    # Check the modified global variable
+    print("Outside modify_global_variable:", global_var)
+
+
+# Global Scope:
+
+# We define a global variable global_var in the global namespace.
+# We define a global function global_function in the global namespace.
+# We demonstrate how to access the global variable and call the global function.
+# Local Scope:
+
+# We define the local_scope_example function with a local variable and show how local scope works.
+# Accessing Global Variable:
+
+# We define the access_global_variable function that accesses the global variable from within a function.
+# Nested Scope:
+
+# We define the nested_scope_example function with nested scopes, including a local variable and an inner function.
+# We demonstrate the use of the nonlocal keyword to modify the local variable from the outer function.
+# We also show that modifying global_var inside the inner function does not affect the global variable.
+# Modifying Global Variable:
+
+# We define the modify_global_variable function, which uses the global keyword to modify the global variable.

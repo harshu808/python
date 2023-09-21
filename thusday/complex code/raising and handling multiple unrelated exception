@@ -1,0 +1,63 @@
+# Function to raise multiple unrelated exceptions
+def raise_multiple_exceptions(exception_type):
+    if exception_type == "ValueError":
+        raise ValueError("This is a ValueError.")
+    elif exception_type == "TypeError":
+        raise TypeError("This is a TypeError.")
+    elif exception_type == "KeyError":
+        raise KeyError("This is a KeyError.")
+    elif exception_type == "IndexError":
+        raise IndexError("This is an IndexError.")
+    else:
+        raise Exception("This is a generic Exception.")
+
+# Function to handle multiple unrelated exceptions using separate 'except' blocks
+
+
+def handle_exceptions_separately(exception_type):
+    try:
+        raise_multiple_exceptions(exception_type)
+    except ValueError as ve:
+        print(f"Caught ValueError: {ve}")
+    except TypeError as te:
+        print(f"Caught TypeError: {te}")
+    except KeyError as ke:
+        print(f"Caught KeyError: {ke}")
+    except IndexError as ie:
+        print(f"Caught IndexError: {ie}")
+    except Exception as e:
+        print(f"Caught Exception: {e}")
+
+# Function to handle multiple unrelated exceptions using a tuple in a single 'except' block
+
+
+def handle_exceptions_with_tuple(exception_type):
+    try:
+        raise_multiple_exceptions(exception_type)
+    except (ValueError, TypeError, KeyError, IndexError) as e:
+        print(f"Caught Exception (Tuple): {e}")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Handling Multiple Unrelated Exceptions Example:\n")
+
+    exception_types = ["ValueError", "TypeError",
+                       "KeyError", "IndexError", "Unknown"]
+
+    print("1. Handling Separately:")
+    for exception_type in exception_types:
+        handle_exceptions_separately(exception_type)
+
+    print("\n2. Handling with Tuple:")
+    for exception_type in exception_types:
+        handle_exceptions_with_tuple(exception_type)
+
+
+# The raise_multiple_exceptions function raises different exceptions based on the provided exception_type.
+
+# The handle_exceptions_separately function handles the exceptions separately using multiple except blocks for each exception type.
+
+# The handle_exceptions_with_tuple function handles the exceptions using a tuple of exception types within a single except block.
+
+# In the main program, we iterate through a list of different exception types and call both handle_exceptions_separately and handle_exceptions_with_tuple to demonstrate the handling of multiple unrelated exceptions.

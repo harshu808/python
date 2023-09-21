@@ -1,0 +1,61 @@
+import json
+
+# Define structured data as a Python dictionary
+data = {
+    "name": "Alice",
+    "age": 30,
+    "grades": [95, 88, 92],
+    "address": {
+        "street": "123 Main St",
+        "city": "Cityville",
+        "zip": "12345"
+    }
+}
+
+# Serialize data to a JSON string
+# Pretty-printed JSON with 4 spaces for indentation
+json_string = json.dumps(data, indent=4)
+
+# Save the JSON data to a file
+with open("data.json", "w") as json_file:
+    json_file.write(json_string)
+
+print("Data saved to 'data.json':")
+print(json_string)
+
+# Read JSON data from a file
+with open("data.json", "r") as json_file:
+    loaded_data = json.load(json_file)
+
+print("\nLoaded Data:")
+print(loaded_data)
+
+# Accessing JSON data
+print("\nAccessing JSON Data:")
+print("Name:", loaded_data["name"])
+print("Age:", loaded_data["age"])
+print("Grades:", loaded_data["grades"])
+print("Street:", loaded_data["address"]["street"])
+print("City:", loaded_data["address"]["city"])
+print("ZIP:", loaded_data["address"]["zip"])
+
+# Modifying JSON data
+loaded_data["age"] = 31
+loaded_data["grades"].append(90)
+
+# Serialize and save modified data
+modified_json_string = json.dumps(loaded_data, indent=4)
+with open("modified_data.json", "w") as json_file:
+    json_file.write(modified_json_string)
+
+print("\nModified Data saved to 'modified_data.json':")
+print(modified_json_string)
+
+
+# Define structured data as a Python dictionary.
+# Serialize the data to a JSON string using json.dumps().
+# Save the JSON data to a file (data.json).
+# Read JSON data from the file using json.load().
+# Access and display elements of the loaded JSON data.
+# Modify the JSON data.
+# Serialize and save the modified data to another file (modified_data.json).

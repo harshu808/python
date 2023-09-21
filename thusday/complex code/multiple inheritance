@@ -1,0 +1,87 @@
+# Base class 'Animal'
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        pass
+
+# Base class 'Flyable'
+
+
+class Flyable:
+    def fly(self):
+        pass
+
+# Base class 'Swimmable'
+
+
+class Swimmable:
+    def swim(self):
+        pass
+
+# Class 'Bird' inherits from 'Animal' and 'Flyable'
+
+
+class Bird(Animal, Flyable):
+    def speak(self):
+        print(f"{self.name} chirps.")
+
+    def fly(self):
+        print(f"{self.name} flies in the sky.")
+
+# Class 'Fish' inherits from 'Animal' and 'Swimmable'
+
+
+class Fish(Animal, Swimmable):
+    def speak(self):
+        print(f"{self.name} bubbles.")
+
+    def swim(self):
+        print(f"{self.name} swims in the water.")
+
+# Class 'Duck' inherits from 'Bird' and 'Fish'
+
+
+class Duck(Bird, Fish):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        print(f"{self.name} quacks.")
+
+
+# Main program
+if __name__ == "__main__":
+    print("Multiple Inheritance Example:\n")
+
+    # Create instances of 'Duck'
+    donald_duck = Duck("Donald")
+
+    # Demonstrate multiple inheritance
+    print("Donald Duck:")
+    donald_duck.speak()  # Calls 'speak' method from 'Duck' class
+    donald_duck.fly()    # Calls 'fly' method from 'Bird' class
+    donald_duck.swim()   # Calls 'swim' method from 'Fish' class
+
+
+# Base Classes:
+
+# We define three base classes: 'Animal,' 'Flyable,' and 'Swimmable.'
+# Each base class has one or more methods relevant to its purpose.
+# Class 'Bird' (Multiple Inheritance from 'Animal' and 'Flyable'):
+
+# We create the 'Bird' class that inherits from both 'Animal' and 'Flyable.'
+# 'Bird' overrides the 'speak' and 'fly' methods.
+# Class 'Fish' (Multiple Inheritance from 'Animal' and 'Swimmable'):
+
+# We create the 'Fish' class that inherits from both 'Animal' and 'Swimmable.'
+# 'Fish' overrides the 'speak' and 'swim' methods.
+# Class 'Duck' (Multiple Inheritance from 'Bird' and 'Fish'):
+
+# We create the 'Duck' class that inherits from both 'Bird' and 'Fish.'
+# 'Duck' does not override any methods but inherits them from the base classes.
+# Main Program:
+
+# We create an instance of 'Duck' named 'donald_duck.'
+# We demonstrate multiple inheritance by calling methods from different base classes.

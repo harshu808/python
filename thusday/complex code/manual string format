@@ -1,0 +1,66 @@
+# Define variables
+name = "Alice"
+age = 30
+amount = 1234.56789
+grades = [95, 88, 92]
+student_info = {"name": "Bob", "age": 25}
+
+# Basic string formatting
+formatted_string = "Hello, " + name + "!"
+print(formatted_string)
+
+# Using string concatenation
+formatted_age = name + " is " + str(age + 1) + " years old."
+print(formatted_age)
+
+# Numeric formatting with string manipulation
+formatted_amount = "Amount: " + "{:.2f}".format(amount)
+print(formatted_amount)
+
+# Formatting lists with string manipulation
+formatted_grades = "Grades: " + ', '.join(map(str, grades))
+print(formatted_grades)
+
+# Using expressions and functions
+formatted_greeting = "Hello, " + name.upper() + "!"
+print(formatted_greeting)
+
+# Accessing dictionary values with string manipulation
+formatted_info = "Student: " + \
+    student_info["name"] + ", Age: " + str(student_info["age"])
+print(formatted_info)
+
+# Advanced formatting with string concatenation
+formatted_advanced = "Amount: " + \
+    "{:.2f}".format(amount) + ", Hex: " + amount.hex()
+print(formatted_advanced)
+
+# Conditional expressions in string concatenation
+is_adult = True
+status_message = "You are " + ("an adult" if is_adult else "a minor") + "."
+print(status_message)
+
+# String alignment and filling with manual formatting
+name = "Name"
+age = "Age"
+grade = "Grade"
+formatted_aligned = "Aligned: " + \
+    name.ljust(10) + " | " + age.center(5) + " | " + grade.rjust(5)
+print(formatted_aligned)
+
+# Using format specifiers for manual formatting
+formatted_specifier = "Formatted: " + \
+    "{:>10}".format("Alice") + " | " + "{:^10}".format(30) + \
+    " | " + "{:.2f}".format(95.5)
+print(formatted_specifier)
+
+# String alignment with manual formatting
+aligned_text = " " * 6 + "Centered Text" + " " * 6
+print(aligned_text)
+
+# Manual multiline string formatting
+multiline_string = (
+    "Name: Alice\n"
+    "Age: 30\n"
+)
+print(multiline_string)

@@ -1,0 +1,58 @@
+# Define variables
+name = "Alice"
+age = 30
+amount = 1234.56789
+grades = [95, 88, 92]
+student_info = {"name": "Bob", "age": 25}
+
+# Basic f-string
+formatted_string = f"Hello, {name}!"
+print(formatted_string)
+
+# Expressions inside f-strings
+formatted_age = f"{name} is {age + 1} years old."
+print(formatted_age)
+
+# Numeric formatting
+# Format as a floating-point number with 2 decimal places
+formatted_amount = f"Amount: {amount:.2f}"
+print(formatted_amount)
+
+# Formatting lists
+# Convert grades to strings and join them
+formatted_grades = f"Grades: {', '.join(map(str, grades))}"
+print(formatted_grades)
+
+# Using expressions and functions
+formatted_greeting = f"Hello, {name.upper()}!"
+print(formatted_greeting)
+
+# Accessing dictionary values
+formatted_info = f"Student: {student_info['name']}, Age: {student_info['age']}"
+print(formatted_info)
+
+# Padding and alignment
+formatted_table = f"| {'Name':<10} | {'Age':^5} | {'Grade':>5} |"
+print(formatted_table)
+
+# Advanced formatting
+formatted_advanced = f"Amount: {amount:.2f}, Hex: {amount.hex()}"
+print(formatted_advanced)
+
+# Conditional expressions in f-strings
+is_adult = True
+status_message = f"You are {'an adult' if is_adult else 'a minor'}."
+print(status_message)
+
+# Using f-strings for dynamic code generation
+function_name = "greet"
+dynamic_code = f"def {function_name}(name): print(f'Hello, {name}!')"
+exec(dynamic_code)  # Execute dynamically generated code
+greet("Charlie")  # Call the dynamically generated function
+
+# F-strings with multiline strings
+multiline_string = f"""\
+Hello, {name}!
+You are {age} years old.
+"""
+print(multiline_string)

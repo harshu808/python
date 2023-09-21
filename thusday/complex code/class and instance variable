@@ -1,0 +1,78 @@
+# Class definition 'Person'
+class Person:
+    # Class variable shared by all instances
+    population = 0
+
+    def __init__(self, name, age):
+        # Instance variables unique to each instance
+        self.name = name
+        self.age = age
+
+        # Increment the class variable to count persons
+        Person.population += 1
+
+    # Instance method to introduce the person
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, and I'm {self.age} years old.")
+
+    # Class method to display the population
+    @classmethod
+    def display_population(cls):
+        print(f"Current population: {cls.population}")
+
+
+# Create instances of 'Person' class
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
+
+# Demonstrate class and instance variables
+print("Class and Instance Variables Example:\n")
+
+# Access class and instance variables
+print("Class and Instance Variables:")
+print(f"Class variable 'population': {Person.population}")
+print(f"Instance variable 'name' for person1: {person1.name}")
+print(f"Instance variable 'name' for person2: {person2.name}")
+
+# Call the 'introduce' method for each person
+print("\nIntroducing Persons:")
+person1.introduce()
+person2.introduce()
+
+# Call the class method to display the population
+print("\nDisplaying Population:")
+Person.display_population()
+
+# Modify an instance variable
+person1.name = "Alicia"
+print("\nModified 'name' for person1:", person1.name)
+
+# Increment class variable to simulate a new person
+Person.population += 1
+print("Simulated addition to population")
+
+# Call the class method to display the updated population
+print("\nDisplaying Updated Population:")
+Person.display_population()
+
+
+# Class 'Person':
+
+# We define the 'Person' class with a class variable (population) and instance variables (name and age).
+# The class also defines an introduce instance method and a display_population class method.
+# Class and Instance Variables:
+
+# We access class variable population and instance variables name for both person1 and person2.
+# Calling Methods and Displaying Population:
+
+# We call the introduce instance method for each person.
+# We call the display_population class method to display the population.
+# Modifying an Instance Variable:
+
+# We modify the name instance variable for person1.
+# Simulating Population Change:
+
+# We simulate an addition to the population by directly incrementing the class variable population.
+# Displaying Updated Population:
+
+# We call the display_population class method again to show the updated population.
