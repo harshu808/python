@@ -1,0 +1,56 @@
+import sys
+import logging
+
+# Configure logging
+logging.basicConfig(filename='error.log', level=logging.ERROR,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+def perform_complex_calculation(x, y):
+    try:
+        result = x / y
+        return result
+    except ZeroDivisionError as e:
+        logging.error(f"Division by zero error: {e}")
+        sys.exit(1)
+
+
+def main():
+    try:
+        x = float(input("Enter a value for x: "))
+        y = float(input("Enter a value for y: "))
+
+        result = perform_complex_calculation(x, y)
+        print(f"Result of the calculation: {result}")
+    except ValueError as e:
+        logging.error(f"Invalid input: {e}")
+        sys.exit(1)
+    except KeyboardInterrupt:
+        logging.error("Program terminated by user (KeyboardInterrupt)")
+        sys.exit(1)
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except SystemExit as e:
+        if e.code == 0:
+            print("Program executed successfully.")
+        else:
+            print("Program terminated with an error.")
+
+
+# We configure logging to record error messages to a file called error.log at the ERROR level.
+
+# We define a function perform_complex_calculation that takes two numbers x and y and attempts to perform a complex calculation (division) while handling potential exceptions, such as ZeroDivisionError.
+
+# In the main function, we take user input for x and y and call perform_complex_calculation to perform the calculation. We handle potential exceptions, such as ValueError for invalid input and KeyboardInterrupt for user termination.
+
+# We use sys.exit(1) to terminate the program with a non-zero exit code in case of errors. This allows for distinguishing successful program execution (exit code 0) from errors (non-zero exit code).
+
+# We wrap the main function call in a try...except block in the if __name__ == "__main__" block to catch any unhandled exceptions. Depending on the exit code, we print a corresponding message to indicate success or failure.
+
+# To use this program, you can enter values for x and y, and it will perform the division and handle various types of errors, logging them to the error.log file. You can also intentionally enter invalid inputs to see how the program handles them.

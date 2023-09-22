@@ -1,0 +1,47 @@
+import threading
+import requests
+from bs4 import BeautifulSoup
+import time
+
+# URLs to scrape
+urls = [
+    "https://example.com/page1",
+    "https://example.com/page2",
+    "https://example.com/page3",
+    "https://example.com/page4",
+    "https://example.com/page5",
+]
+
+# Function to scrape a URL and extract some data
+
+
+def scrape_url(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, "html.parser")
+        title = soup.title.string
+        print(f"Scraped from {url}: {title}")
+    else:
+        print(f"Failed to scrape {url}")
+
+# Function to manage concurrent scraping tasks
+
+
+def scrape_concurrently():
+    threads = []
+    for url in urls:
+        thread = threading.Thread(target=scrape_url, args=(url,))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+
+if __name__ == "__main__":
+    start_time = time.time()
+    scrape_concurrently()
+    end_time = time.time()
+
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time:.2f} seconds")

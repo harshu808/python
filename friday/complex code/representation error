@@ -1,0 +1,46 @@
+from decimal import Decimal
+import math
+from fractions import Fraction
+
+# Issue 1: Representation Error with Irrational Numbers
+x = math.sqrt(2)
+y = x * x
+print(
+    f"Issue 1: Representation Error with Irrational Numbers - x * x: {y:.50f}")
+
+# Issue 2: Representation Error with Fractions
+a = Fraction(1, 3)
+b = Fraction(3, 7)
+c = a * b
+print(f"Issue 2: Representation Error with Fractions - a * b: {c}")
+
+# Issue 3: Representation Error with Large Numbers
+large_number = 10**100
+small_number = 1
+result = large_number + small_number
+print(f"Issue 3: Representation Error with Large Numbers - {result}")
+
+# Issue 4: Representation Error with Decimal Arithmetic
+decimal_a = Decimal("0.1")
+decimal_b = Decimal("0.2")
+decimal_result = decimal_a + decimal_b
+print(
+    f"Issue 4: Representation Error with Decimal Arithmetic - {decimal_result:.20f}")
+
+# Issue 5: Representation Error with Rounding
+rounded_result = round(0.1 + 0.1 + 0.1, 1)
+print(
+    f"Issue 5: Representation Error with Rounding - rounded_result: {rounded_result}")
+
+# Issue 6: Representation Error with Binary Floating-Point
+binary_result = 0.1 + 0.1 + 0.1
+print(
+    f"Issue 6: Representation Error with Binary Floating-Point - binary_result: {binary_result:.20f}")
+
+# Issue 7: Representation Error with Trigonometric Functions
+angle = math.pi / 3  # 60 degrees
+sin_angle = math.sin(angle)
+cos_angle = math.cos(angle)
+tan_angle = math.tan(angle)
+print(
+    f"Issue 7: Representation Error with Trigonometric Functions - sin: {sin_angle:.20f}, cos: {cos_angle:.20f}, tan: {tan_angle:.20f}")

@@ -1,0 +1,51 @@
+import logging
+import random
+import time
+
+# Configure the logging system
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] - %(message)s",
+    filename="banking.log",
+    filemode="w",
+)
+
+# Create a custom logger
+logger = logging.getLogger("banking")
+
+# Function to simulate a bank transaction
+
+
+def perform_transaction(account_id, amount):
+    try:
+        if random.random() < 0.2:
+            raise ValueError("Transaction failed due to insufficient funds.")
+
+        # Simulate a successful transaction
+        logger.info(f"Transaction: Account {account_id}, Amount: {amount:.2f}")
+    except Exception as e:
+        logger.error(
+            f"Transaction error: Account {account_id}, Amount: {amount:.2f} - {str(e)}")
+
+
+# Main function
+if __name__ == "__main__":
+    accounts = ["123456", "789012", "345678", "901234"]
+
+    for _ in range(10):
+        account_id = random.choice(accounts)
+        amount = random.uniform(10, 1000)
+        perform_transaction(account_id, amount)
+
+    logger.info("Banking simulation completed.")
+
+
+# We configure the logging system using logging.basicConfig. We set the logging level to DEBUG, specify a log format, set the log file to "banking.log," and use "w" mode to overwrite the log file if it exists.
+
+# We create a custom logger named "banking" using logging.getLogger.
+
+# The perform_transaction function simulates a bank transaction, which may succeed or fail randomly. Successful transactions are logged with logger.info, while failed transactions are logged with logger.error.
+
+# In the main part of the program, we simulate multiple transactions for different accounts with random amounts.
+
+# We log an "info" message to indicate the completion of the banking simulation.

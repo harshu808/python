@@ -1,0 +1,40 @@
+# Define a generator expression to generate prime numbers
+import itertools
+
+
+def generate_primes():
+    primes = []  # A list to store prime numbers found so far
+    yield 2      # 2 is the first prime number
+
+    for number in itertools.count(start=3, step=2):
+        # Check if number is divisible by any of the known primes
+        is_prime = all(number % prime != 0 for prime in primes)
+
+        if is_prime:
+            yield number  # If it's prime, yield it
+            primes.append(number)  # Add it to the list of known primes
+
+        if len(primes) > 100:  # Generate the first 100 prime numbers
+            break
+
+
+# Use the generator expression to print the first 100 prime numbers
+prime_generator = generate_primes()
+print("The first 100 prime numbers are:")
+for i, prime in enumerate(prime_generator, start=1):
+    print(prime, end=", " if i % 10 != 0 else "\n")
+
+
+# We define a generate_primes generator function that uses the Sieve of Eratosthenes algorithm to generate prime numbers. It starts with 2 as the first prime number and then iterates through odd numbers, checking for primality.
+
+# We use a generator expression to yield prime numbers. This ensures that we don't need to generate and store all prime numbers at once, saving memory.
+
+# We use the itertools.count function to generate an infinite sequence of odd numbers starting from 3.
+
+# We check if each number is prime by iterating through the list of known primes and checking if the number is divisible by any of them.
+
+# If a number is prime, we yield it and add it to the list of known primes.
+
+# We break out of the loop after generating the first 100 prime numbers.
+
+# Finally, we use the generator to print the first 100 prime numbers, formatting them in rows of 10 numbers each.

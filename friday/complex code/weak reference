@@ -1,0 +1,65 @@
+import weakref
+
+
+class ExpensiveResource:
+    def __init__(self, name):
+        self.name = name
+        self.data = None
+
+    def load_data(self):
+        # Simulate loading expensive data
+        self.data = f"Data for {self.name}"
+
+
+class ResourceCache:
+    def __init__(self):
+        self.cache = {}
+
+    def get_resource(self, name):
+        if name in self.cache:
+            # Check if the resource is still alive
+            resource_ref = self.cache[name]
+            resource = resource_ref()
+            if resource is not None:
+                print(f"Using cached resource: {name}")
+                return resource
+
+        # Create a new resource if not found in the cache
+        resource = ExpensiveResource(name)
+        print(f"Creating new resource: {name}")
+        resource.load_data()
+
+        # Store a weak reference to the resource in the cache
+        self.cache[name] = weakref.ref(resource)
+        return resource
+
+
+if __name__ == "__main__":
+    cache = ResourceCache()
+
+    # First access to a resource
+    resource1 = cache.get_resource("ResourceA")
+    print(f"Resource1 data: {resource1.data}")
+
+    # Second access to the same resource
+    resource2 = cache.get_resource("ResourceA")
+    print(f"Resource2 data: {resource2.data}")
+
+    # Let's remove the strong reference to the resource
+    del resource1
+    del resource2
+
+    # Access the same resource again (it should be reloaded)
+    resource3 = cache.get_resource("ResourceA")
+    print(f"Resource3 data: {resource3.data}")
+
+
+# We define an ExpensiveResource class that simulates an expensive resource that needs to be loaded. The resource has a load_data method to simulate loading data.
+
+# We create a ResourceCache class that serves as a cache for expensive resources. It stores weak references to resources in its cache to avoid strong reference cycles.
+
+# The ResourceCache class's get_resource method checks if a resource is already cached and still alive. If not, it creates a new resource and stores a weak reference to it in the cache.
+
+# In the main part of the program, we demonstrate accessing and caching an expensive resource. We also show that when strong references to the resource are deleted, accessing it again results in reloading.
+
+# Weak references are used to manage the lifetime of the resources in the cache, allowing them to be garbage collected when no longer needed.

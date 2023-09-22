@@ -1,0 +1,57 @@
+import glob
+import os
+import shutil
+
+# Define a function to search for files matching a wildcard pattern
+
+
+def find_files_with_wildcard(directory, pattern):
+    return glob.glob(os.path.join(directory, pattern))
+
+# Define a function to move files matching a pattern to a new directory
+
+
+def move_files_to_directory(source_directory, destination_directory, pattern):
+    matching_files = find_files_with_wildcard(source_directory, pattern)
+
+    if not matching_files:
+        print(
+            f"No files matching pattern '{pattern}' found in '{source_directory}'.")
+        return
+
+    os.makedirs(destination_directory, exist_ok=True)
+
+    for file_path in matching_files:
+        shutil.move(file_path, os.path.join(
+            destination_directory, os.path.basename(file_path)))
+
+
+# Main program
+if __name__ == "__main__":
+    source_directory = "source_files"
+    destination_directory = "destination_files"
+    wildcard_pattern = "*.txt"  # Example wildcard pattern
+
+    # Create some sample text files in the source directory
+    os.makedirs(source_directory, exist_ok=True)
+    with open(os.path.join(source_directory, "file1.txt"), "w") as file:
+        file.write("This is file 1.")
+    with open(os.path.join(source_directory, "file2.txt"), "w") as file:
+        file.write("This is file 2.")
+    with open(os.path.join(source_directory, "file3.jpg"), "w") as file:
+        file.write("This is not a text file.")
+
+    # Search for files with a wildcard pattern
+    matching_files = find_files_with_wildcard(
+        source_directory, wildcard_pattern)
+    print(f"Files matching pattern '{wildcard_pattern}':")
+    for file_path in matching_files:
+        print(file_path)
+
+    # Move files matching the pattern to the destination directory
+    move_files_to_directory(
+        source_directory, destination_directory, wildcard_pattern)
+    print(
+        f"Moved files matching pattern '{wildcard_pattern}' to '{destination_directory}':")
+    for file_path in glob.glob(os.path.join(destination_directory, wildcard_pattern)):
+        print(file_path)

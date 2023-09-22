@@ -1,0 +1,35 @@
+import os
+from jinja2 import Environment, FileSystemLoader
+pip install Jinja2
+
+
+# Function to generate a report using Jinja2 templates
+
+def generate_report(data):
+    template_dir = os.path.join(os.path.dirname(
+        os.path.abspath(__file__)), "templates")
+    env = Environment(loader=FileSystemLoader(template_dir))
+    template = env.get_template("report_template.html")
+
+    report = template.render(data=data)
+    return report
+
+
+if __name__ == "__main__":
+    data = {
+        "title": "Monthly Sales Report",
+        "month": "September 2023",
+        "sales_data": [
+            {"product": "Product A", "sales": 1000},
+            {"product": "Product B", "sales": 1500},
+            {"product": "Product C", "sales": 800},
+        ],
+    }
+
+    report_html = generate_report(data)
+
+    # Write the report to a file
+    with open("sales_report.html", "w") as f:
+        f.write(report_html)
+
+    print("Report generated and saved to 'sales_report.html'")

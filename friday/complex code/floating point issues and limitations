@@ -1,0 +1,66 @@
+# Issue 1: Precision and Rounding Errors
+from decimal import Decimal
+import math
+a = 0.1
+b = 0.2
+result = a + b
+print(f"Issue 1: Precision and Rounding Errors - {result:.17f}")
+
+# Issue 2: Comparing Floating-Point Numbers
+x = 0.1 + 0.2
+y = 0.3
+print(f"Issue 2: Comparing Floating-Point Numbers - x == y: {x == y}")
+
+# Issue 3: Loss of Significance
+large_number = 1e15
+small_number = 1
+result = large_number + small_number - large_number
+print(f"Issue 3: Loss of Significance - {result}")
+
+# Issue 4: Overflow and Underflow
+infinity = float("inf")
+underflow = 1e-323
+overflow = 1e308 * 1e308
+print(
+    f"Issue 4: Overflow and Underflow - Infinity: {math.isinf(infinity)}, Underflow: {underflow}, Overflow: {math.isinf(overflow)}")
+
+# Issue 5: Associativity
+a = 1e-16
+b = 1.0
+c = 1e16
+result1 = (a + b) + c
+result2 = a + (b + c)
+print(f"Issue 5: Associativity - Result1: {result1}, Result2: {result2}")
+
+# Issue 6: NaN (Not-a-Number)
+nan = float("nan")
+result = nan + 1
+print(
+    f"Issue 6: NaN (Not-a-Number) - Result: {result}, Is NaN: {math.isnan(result)}")
+
+# Issue 7: Lack of Decimal Precision
+decimal_a = Decimal("0.1")
+decimal_b = Decimal("0.2")
+decimal_result = decimal_a + decimal_b
+print(f"Issue 7: Lack of Decimal Precision - {decimal_result}")
+
+# Issue 8: Truncation Errors
+value = 123.456789
+truncated = int(value)
+print(f"Issue 8: Truncation Errors - Truncated: {truncated}")
+
+# Issue 9: The epsilon Value
+epsilon = 1e-10
+a = 1.0
+b = 1.0 + epsilon
+print(f"Issue 9: The epsilon Value - a == b: {a == b}")
+
+# Issue 10: Subnormal Numbers
+subnormal = 1e-308 / 2
+print(f"Issue 10: Subnormal Numbers - {subnormal}")
+
+# Issue 11: Limited Range of Representable Numbers
+minimum_exponent = -308
+maximum_exponent = 308
+print(
+    f"Issue 11: Limited Range of Representable Numbers - Min Exponent: {minimum_exponent}, Max Exponent: {maximum_exponent}")

@@ -1,0 +1,45 @@
+import calendar
+import pytz
+import datetime
+pip install pytz
+
+
+# Function to calculate the age of a person
+
+def calculate_age(birthdate):
+    today = datetime.date.today()
+    age = today.year - birthdate.year - \
+        ((today.month, today.day) < (birthdate.month, birthdate.day))
+    return age
+
+# Function to convert a UTC datetime to a specific time zone
+
+
+def convert_to_timezone(utc_datetime, target_timezone):
+    return utc_datetime.astimezone(pytz.timezone(target_timezone))
+
+# Function to generate a calendar for a specific month and year
+
+
+def generate_calendar(year, month):
+    cal = calendar.month(year, month)
+    return cal
+
+
+if __name__ == "__main__":
+    # Calculate age
+    birthdate = datetime.date(1990, 5, 15)
+    age = calculate_age(birthdate)
+    print(f"Age: {age} years")
+
+    # Convert UTC time to a specific time zone
+    utc_time = datetime.datetime(2023, 9, 15, 12, 0, tzinfo=pytz.utc)
+    target_timezone = "America/New_York"
+    local_time = convert_to_timezone(utc_time, target_timezone)
+    print(f"UTC Time: {utc_time}")
+    print(f"Local Time ({target_timezone}): {local_time}")
+
+    # Generate a calendar for a specific month and year
+    year, month = 2023, 9
+    cal = generate_calendar(year, month)
+    print(f"\nCalendar for {calendar.month_name[month]} {year}:\n{cal}")

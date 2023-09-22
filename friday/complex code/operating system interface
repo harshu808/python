@@ -1,0 +1,68 @@
+import os
+import shutil
+
+# Create a directory and subdirectories
+
+
+def create_directory_structure(base_dir):
+    os.makedirs(base_dir, exist_ok=True)
+    os.makedirs(os.path.join(base_dir, 'subdir1'), exist_ok=True)
+    os.makedirs(os.path.join(base_dir, 'subdir2'), exist_ok=True)
+
+# Create text files in the directory
+
+
+def create_text_files(base_dir):
+    for subdir in ['subdir1', 'subdir2']:
+        for i in range(1, 4):
+            filename = os.path.join(base_dir, subdir, f'file{i}.txt')
+            with open(filename, 'w') as file:
+                file.write(f'This is {filename}\n')
+
+# List files in a directory
+
+
+def list_files_in_directory(directory):
+    print(f'Files in {directory}:')
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            print(os.path.join(root, file))
+
+# Copy files from one directory to another
+
+
+def copy_files(source, destination):
+    for root, dirs, files in os.walk(source):
+        for file in files:
+            source_path = os.path.join(root, file)
+            dest_path = os.path.join(
+                destination, os.path.relpath(source_path, source))
+            shutil.copy2(source_path, dest_path)
+
+# Execute a system command
+
+
+def run_system_command(command):
+    os.system(command)
+
+
+if __name__ == "__main__":
+    base_directory = "example_directory"
+
+    # Create a directory structure
+    create_directory_structure(base_directory)
+
+    # Create text files in the directory
+    create_text_files(base_directory)
+
+    # List files in the directory
+    list_files_in_directory(base_directory)
+
+    # Copy files from one directory to another
+    new_directory = "copied_directory"
+    copy_files(base_directory, new_directory)
+    print(f'Files copied to {new_directory}:')
+    list_files_in_directory(new_directory)
+
+    # Execute a system command
+    run_system_command("echo 'Hello, OS Interface in Python!'")

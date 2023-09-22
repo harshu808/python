@@ -1,0 +1,43 @@
+import sys
+import regex as re
+pip install regex
+
+
+# Function to load a text document
+
+
+def load_document(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            return file.read()
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+        sys.exit(1)
+
+# Function to search and highlight patterns in the document
+
+
+def search_and_highlight(document, pattern):
+    matches = re.finditer(pattern, document, flags=re.IGNORECASE)
+    highlighted_document = document
+
+    for match in matches:
+        start, end = match.start(), match.end()
+        highlighted_document = highlighted_document[:start] + \
+            f"\033[91m{document[start:end]}\033[0m" + \
+            highlighted_document[end:]
+
+    return highlighted_document
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python pattern_matching.py <file_path> <pattern>")
+        sys.exit(1)
+
+    file_path, pattern = sys.argv[1], sys.argv[2]
+
+    document = load_document(file_path)
+    highlighted_document = search_and_highlight(document, pattern)
+
+    print(highlighted_document)

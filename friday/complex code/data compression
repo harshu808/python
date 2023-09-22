@@ -1,0 +1,52 @@
+import os
+from PIL import Image
+import zlib
+pip install zlib Pillow
+
+
+# Lossless Compression (using zlib)
+
+def compress_data(data):
+    compressed_data = zlib.compress(data)
+    return compressed_data
+
+
+def decompress_data(compressed_data):
+    decompressed_data = zlib.decompress(compressed_data)
+    return decompressed_data
+
+# Lossy Compression (using Pillow)
+
+
+def compress_image(image_path, quality=85):
+    img = Image.open(image_path)
+    img.save("compressed_image.jpg", format="JPEG", quality=quality)
+
+# Function to compare original and compressed file sizes
+
+
+def compare_file_sizes(original_file, compressed_file):
+    original_size = os.path.getsize(original_file)
+    compressed_size = os.path.getsize(compressed_file)
+    compression_ratio = (original_size - compressed_size) / original_size * 100
+
+    print(f"Original File Size: {original_size} bytes")
+    print(f"Compressed File Size: {compressed_size} bytes")
+    print(f"Compression Ratio: {compression_ratio:.2f}%")
+
+
+if __name__ == "__main__":
+    # Lossless Compression Example
+    original_data = b"This is a sample text to demonstrate lossless compression using zlib." * 100
+    compressed_data = compress_data(original_data)
+    decompressed_data = decompress_data(compressed_data)
+
+    print("Lossless Compression Example:")
+    print(f"Original Data Size: {len(original_data)} bytes")
+    print(f"Compressed Data Size: {len(compressed_data)} bytes")
+    print(f"Decompressed Data Size: {len(decompressed_data)} bytes")
+
+    # Lossy Compression (Image Compression) Example
+    image_path = "example_image.jpg"
+    compress_image(image_path, quality=50)
+    compare_file_sizes(image_path, "compressed_image.jpg")

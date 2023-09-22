@@ -1,0 +1,85 @@
+import unittest
+pip install flake8 coverage
+
+
+# quality_control.py
+
+
+# Function to add two numbers
+
+def add(x, y):
+    return x + y
+
+# Function to subtract two numbers
+
+
+def subtract(x, y):
+    return x - y
+
+# Function to multiply two numbers
+
+
+def multiply(x, y):
+    return x * y
+
+# Function to divide two numbers
+
+
+def divide(x, y):
+    if y == 0:
+        raise ValueError("Division by zero is not allowed.")
+    return x / y
+
+# Unit tests
+
+
+class TestMathOperations(unittest.TestCase):
+
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-2, 3), 1)
+
+    def test_subtract(self):
+        self.assertEqual(subtract(5, 2), 3)
+        self.assertEqual(subtract(2, 5), -3)
+
+    def test_multiply(self):
+        self.assertEqual(multiply(2, 3), 6)
+        self.assertEqual(multiply(-2, 3), -6)
+
+    def test_divide(self):
+        self.assertEqual(divide(6, 3), 2)
+        self.assertEqual(divide(10, 2), 5)
+
+        with self.assertRaises(ValueError):
+            divide(5, 0)
+
+
+if __name__ == "__main__":
+    # Code linting using flake8
+    print("Running code linting...")
+    import subprocess
+    lint_result = subprocess.run(
+        ["flake8", "quality_control.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if lint_result.returncode == 0:
+        print("Code linting passed.")
+    else:
+        print("Code linting failed. Please check the code for style issues.")
+        print(lint_result.stdout.decode())
+
+    # Running unit tests with code coverage analysis
+    print("\nRunning unit tests with code coverage analysis...")
+    import coverage
+    cov = coverage.Coverage()
+    cov.start()
+
+    unittest.main(argv=[""], verbosity=2)
+
+    cov.stop()
+    cov.save()
+
+    print("\nCode coverage report:")
+    cov.report()
+
+    print("\nHTML coverage report saved to 'htmlcov/index.html'")
+    cov.html_report()

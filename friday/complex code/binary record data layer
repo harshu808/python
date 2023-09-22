@@ -1,0 +1,63 @@
+import struct
+
+# Define the binary file format
+record_format = "20s I c"
+record_size = struct.calcsize(record_format)
+
+# Function to read student records from a binary file
+
+
+def read_student_records(filename):
+    student_records = []
+
+    with open(filename, "rb") as file:
+        while True:
+            data = file.read(record_size)
+            if not data:
+                break
+            name, age, grade = struct.unpack(record_format, data)
+            student_records.append(
+                (name.decode("utf-8"), age, grade.decode("utf-8")))
+
+    return student_records
+
+# Function to write student records to a binary file
+
+
+def write_student_records(filename, student_records):
+    with open(filename, "wb") as file:
+        for student in student_records:
+            name, age, grade = student
+            packed_data = struct.pack(record_format, name.encode(
+                "utf-8"), age, grade.encode("utf-8"))
+            file.write(packed_data)
+
+
+if __name__ == "__main__":
+    # Sample student records
+    students = [
+        ("Alice", 18, "A"),
+        ("Bob", 17, "B"),
+        ("Charlie", 19, "A+"),
+        ("David", 16, "B+"),
+    ]
+
+    # Write student records to a binary file
+    write_student_records("student_records.dat", students)
+
+    # Read and display student records from the binary file
+    retrieved_students = read_student_records("student_records.dat")
+    print("Student Records:")
+    for student in retrieved_students:
+        print(f"Name: {student[0]}, Age: {student[1]}, Grade: {student[2]}")
+
+
+# We define the binary file format using the struct module. Each record consists of a 20-byte name (encoded as bytes), a 4-byte integer for age, and a 1-byte grade (encoded as bytes).
+
+# We use struct.calcsize to calculate the size of each record.
+
+# The read_student_records function reads student records from a binary file and unpacks the binary data into Python variables.
+
+# The write_student_records function writes student records to a binary file by packing Python variables into binary data.
+
+# We create sample student records, write them to a binary file, and then read and display them.

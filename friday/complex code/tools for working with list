@@ -1,0 +1,26 @@
+import random
+from statistics import mean
+
+# Generate a list of random numbers
+data = [random.randint(1, 100) for _ in range(100)]
+
+# Use list comprehension to filter even numbers
+even_numbers = [x for x in data if x % 2 == 0]
+
+# Use a generator expression to find squares of even numbers
+squares_of_even = (x ** 2 for x in even_numbers)
+
+# Use a list comprehension to filter squares greater than 2000
+filtered_squares = [x for x in squares_of_even if x > 2000]
+
+# Use a generator expression to calculate the running average
+running_average = (mean(data[:i + 1]) for i in range(len(data)))
+
+# Print the results
+print("Original Data:", data)
+print("Even Numbers:", even_numbers)
+# Convert the generator to a list
+print("Squares of Even Numbers:", list(squares_of_even))
+print("Filtered Squares:", filtered_squares)
+# Convert the generator to a list
+print("Running Average:", list(running_average))

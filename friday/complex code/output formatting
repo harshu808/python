@@ -1,0 +1,30 @@
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+
+    def __str__(self):
+        return f"{self.name} (Age: {self.age}, Grade: {self.grade})"
+
+
+def generate_report(students):
+    print("Student Report".center(40, "="))
+    print("{:<15} {:<10} {:<10}".format("Name", "Age", "Grade"))
+    print("-" * 40)
+
+    for student in students:
+        print(f"{student.name:<15} {student.age:<10} {student.grade:<10}")
+
+    print("=" * 40)
+
+
+if __name__ == "__main__":
+    students = [
+        Student("Alice", 18, "A"),
+        Student("Bob", 17, "B"),
+        Student("Charlie", 19, "A+"),
+        Student("David", 16, "B+"),
+    ]
+
+    generate_report(students)
